@@ -1,5 +1,3 @@
-//testing입니당
-
 /* index.js */
 const express = require("express");//express모듈 불러오기
 const app = express();//express 앱 생성
