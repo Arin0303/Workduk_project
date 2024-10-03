@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en"> <!-- **10,11 멘토프로필(재학/졸업생멘토)-->
+
+<head>
+    <meta charset="UTF-8">
+    <title>멘토프로필(재학/졸업생멘토)</title>
+    <style>
+        
+        @import url(default.css);
+        body {
+            font-family: 'NEXON Lv1 Gothic OTF';
+        }
+
+        .profile-page {
+            display: flex;
+            width: 60%;
+            height: 45%;
+            background-color: #fff;
+            border: 0.2px solid #e0e0e0;
+            border-radius: 8px;
+            box-shadow: 0 0px 1px rgba(0,0,0,0.1);
+            
+            margin-left: 27%;
+            margin-top: 2%;
+            margin-bottom: 5%;
+        }
+
+        .profile-sidebar {
+            width: 30%;
+            padding: 20px;
+            background-color: #fefdfd;
+            text-align: center;
+            border-right: 1px solid #e0e0e0;
+        }
+
+        .profile-pic {
+            margin-bottom: 20px;
+        }
+
+        .profile-pic-preview {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: #ddd;
+            cursor: pointer;
+            margin: 0 auto 10px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .change-button {
+            background-color: rgb(183, 0, 80);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .change-button:hover {
+            background-color: rgb(118, 0, 51);
+        }
+
+        .profile-content {
+            width: 70%;
+            padding: 30px;
+        }
+
+        .profile-sidebar h2 {
+            margin-top: 30px;
+            margin-bottom: 20px;
+            color: #000000;
+        }
+
+        .profile-form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        .form-group {
+            display: flex;                /* Flex 컨테이너로 설정 */
+            align-items: center;          /* 수직 가운데 정렬 */
+            flex: 1 1 45%;
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            width: 30%;                   /* 레이블의 너비를 설정 */
+            margin-bottom: 0;             /* 레이블 아래쪽 여백 제거 */
+            color: #555;
+            text-align: left;            /* 레이블 텍스트를 오른쪽 정렬 */
+            margin-right: 15px;   /* 레이블과 입력 필드 사이의 간격 */
+            font-size: 14px;        
+        }
+
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
+            width: 70%;                   /* 입력 필드의 너비를 설정 */
+            padding: 10px;
+            border: 0.3px solid #ccc;
+            border-radius: 4px;
+            
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        .buttons {
+            display: flex;              /* Flex 컨테이너로 설정 */
+            justify-content: center;    /* 버튼을 가로로 가운데 정렬 */
+            align-items: center;        /* 수직 방향으로 가운데 정렬 */
+            gap: 10px;                  /* 버튼 사이의 간격 */
+            margin-top: 40px;           /* 상단 여백 */
+            margin-bottom: 5px;
+        }
+
+        .btn {
+            width: 12%;
+            padding: 10px;
+            background-color: rgb(183, 0, 80);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: rgb(118, 0, 51);
+        }
+
+        @media (max-width: 768px) {
+            .profile-page {
+                flex-direction: column;
+            }
+            .profile-sidebar, .profile-content {
+                width: 100%;
+            }
+            .form-group {
+                flex: 1 1 100%;
+            }
+        }
+
+        .profile-page {
+
+        margin-top: -40px;
+        }
+
+
+
+
+
+    /*멘토프로필 설명*/
+        .tooltip-container {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+    
+        .tooltip-text {
+            visibility: hidden;
+            width: 400px;
+            background-color: rgb(255, 244, 244);
+            color: #000000;
+            text-align: center;
+            border-radius: 8px;
+            padding: 15px;
+            position: absolute;
+            z-index: 1;
+            bottom: 140%; /* 위로 뜨게 함 */
+            left: 50%;
+            margin-left: -100px; /* 가운데 정렬 */
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+    
+        
+
+
+        .mentor-profile-link{
+            color: rgb(137, 137, 137); /* 링크 색상 */
+            font-size: 13px;
+            text-decoration: none;
+            
+        }
+        
+        .mentor-profile-link a:hover {
+            color: #ff6e9a;/* 마우스 오버 시 색상 */
+            
+        }
+        
+
+        
+
+    
+    </style>
+
+
+
+        <script>
+            <script>
+                window.onload = function () {
+                    let canvas = document.getElementById("photo");
+                    let circle = canvas.getContext("2d");
+                    circle.beginPath();
+                    circle.strokeStyle = "black";
+                    circle.arc(50, 50, 40, 0, 2 * Math.PI, false);
+                    circle.stroke();
+                }
+            
+                    function previewImage(event) {
+                        var reader = new FileReader();
+                        reader.onload = function() {
+                            var output = document.querySelector('.profile-pic-preview');
+                            output.style.backgroundImage = 'url(' + reader.result + ')';
+                        };
+                        reader.readAsDataURL(event.target.files[0]);
+                    }
+            
+                    function changeProfilePic() {
+                        document.getElementById('profile-pic-upload').click();
+                    }
+            
+                    function updateProfile() {
+                        alert("마이 프로필 수정이 완료되었습니다!");
+                    }
+        
+                    function saveProfile() {
+                        alert("마이 프로필을 저장했습니다!");
+                    }
+            </script>
+    </script>
+
+</head>
+
+<body>
+    <header>
+        <a href="home_login.html">
+            <img src="workduk_logo2.png" width="200" height="200" alt="Duksung Logo">
+        </a>
+        <hr>
+
+
+    </header>
+
+    <!-- 상단 목차 -->
+    <nav>
+        <!-- 디소공 소개 -->
+        <span class="top_intro">디소공 소개
+            <div class="top_intro_list">
+                <div><a href="Disogong.html">소개</a></div>
+                <div><a href="Disogong_BigData.html">빅데이터</a></div>
+                <div><a href="Disogong_WebApp.html">웹&앱</a></div>
+                <div><a href="Disogong_Ai.html">인공지능</a></div>
+                <div><a href="Disogong_Iot.html">사물인터넷</a></div>
+                <div><a href="Disogong_Security.html">사이버보안</a></div>
+            </div>
+        </span>
+        <!-- 멘토/게시판 -->
+        <span class="top_mento_board">멘토/게시판
+            <div class="top_mento_board_list">
+                <div><a href="mentorRank.html">멘토 프로필</a></div>
+                <div><a href="com_board.html">소통 게시판</a></div>
+            </div>
+        </span>
+        <!-- 합격 정보 -->
+        <span class="top_success_info">합격 정보
+            <div class="top_success_info_list">
+                <div><a href="webapp_info.html">웹&앱</a></div>
+                <div><a href="database_info.html">데이터베이스</a></div>
+                <div><a href="network_security_info.html">네트워크/보안</a></div>
+                <div><a href="ai_info.html">인공지능</a></div>
+                <div><a href="game_info.html">게임</a></div>
+                <div><a href="else_info.html">공모전/대외활동/인턴</a></div>
+            </div>
+        </span>
+
+        <!-- 프로젝트 팀원/스터디원 모집 -->
+        <span><a href="top_project_team.html">프로젝트 팀원/스터디원 모집</a></span>
+        <!-- 취업 현황 -->
+        <span><a href="employment.html">취업 현황</a></span>
+    </nav>
+
+    <!-- 좌측 프로필란 -->
+    <section class="profile_space">
+        <div><canvas id="photo" width="100" height="100" style="background-color: #FFF5F8"></canvas></div>
+        <div><a href="myPost.html">내가 쓴 글</a></div>
+        <div><a href="myComment.html">댓글 단 글</a></div>
+        <div><a href="myScrap.html">내 스크랩</a></div>
+        <div><a href="myChat.html">나의 채팅</a></div>
+        <span><a href="myProfile.html">마이 프로필 | </a></span>
+        <span><a href="home_logout.html">로그아웃</a></span>
+    </section>
+
+    <!-- 좌측 전체 검색란 -->
+    <section class="search_all">
+        <div>
+            <input type="search" id="searchAll" placeholder="전체 글 검색">
+            <input type="button" id="searchAll_button" value="검색">
+        </div>
+    </section>
+
+
+
+
+    <div class="profile-page">
+        <div class="profile-sidebar">
+            <div class="profile-pic">
+                <h2>마이 프로필</h2>
+                <input type="file" id="profile-pic-upload" name="profile-pic" accept="image/*" onchange="previewImage(event)" style="display:none;">
+                <div class="profile-pic-preview" onclick="document.getElementById('profile-pic-upload').click()">
+                    <!-- 이미지 미리보기가 여기 표시됨 -->
+                </div>
+                <input type="button" value="변경하기" onclick="changeProfilePic()" class="change-button">
+            </div>
+        </div>
+
+
+        <div class="profile-content">
+            <form id="profile-form">
+                <div class="form-group">
+                    <label for="nickname">닉네임</label>
+                    <input type="text" id="nickname" name="nickname" placeholder="필수">
+                </div>
+                <div class="form-group">
+                    <label for="degree">학적</label>
+                    <select id="degree" name="degree">
+                        <option value="1학년 1학기">1학년 1학기</option>
+                        <option value="1학년 2학기">1학년 2학기</option>
+                        <option value="2학년 1학기">2학년 1학기</option>
+                        <option value="2학년 2학기">2학년 2학기</option>
+                        <option value="3학년 1학기">3학년 1학기</option>
+                        <option value="3학년 2학기">3학년 2학기</option>
+                        <option value="4학년 1학기">4학년 1학기</option>
+                        <option value="4학년 2학기">4학년 2학기</option>
+                        <option value="졸업">졸업</option>
+                        <option value="휴학">휴학</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="major">전공</label>
+                    <select id="major" name="major">
+                        <option value="디지털소프트웨어공학부">디지털소프트웨어공학</option>
+                        <option value="컴퓨터공학전공">컴퓨터공학</option>
+                        <option value="소프트웨어전공">소프트웨어</option>
+                        <option value="사이버보안전공">사이버보안</option>
+                        <option value="IT미디어공학전공">IT미디어공학</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="gpa-major">학점(전공)</label>
+                    <input type="text" id="gpa-major" name="gpa-major" placeholder="선택 /4.5">
+                </div>
+                <div class="form-group">
+                    <label for="gpa-total">학점(전체)</label>
+                    <input type="text" id="gpa-total" name="gpa-total" placeholder="선택 /4.5">
+                </div>
+                <div class="form-group">
+                    <label for="interests">관심 분야 (#)</label>
+                    <select id="interests" name="interests">
+                        <option value="#웹/앱">#웹/앱</option>
+                        <option value="#인공지능">#인공지능</option>
+                        <option value="#빅데이터">#빅데이터</option>
+                        <option value="#사물인터넷">#사물인터넷</option>
+                        <option value="#사이버보안">#사이버보안</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="spec">스펙 <br>(대학활동, 자격증...)</label>
+                    <input type="text" id="spec" name="spec" placeholder="선택">
+                </div>
+                <div class="form-group">
+                    <label for="self-intro">자기소개</label>
+                    <textarea id="self-intro" name="self-intro" placeholder="선택"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="mentorProfile"  class="tooltip-container">멘토프로필</b>
+                    <span class="tooltip-text">게시판에서 멘토로 활동할 때 보여지는 프로필입니다. 멘토 프로필 생성을 원하시면 바로 옆 '<b>멘토프로필 설정</b>'을 클릭하세요.</span></label>
+                    <span class="mentor-profile-link"> 하단의 멘토프로필을 설정하세요!</span>
+                </div>
+                <div class="form-group buttons">
+                    <input type="button" value="수정하기" onclick="updateProfile()" class="btn">
+                    <input type="submit" value="저장하기" onclick="saveProfile()" class="btn">
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <!-------- 멘토 프로필   ------->
+
+    <div class="profile-page">
+        <div class="profile-sidebar">
+            <div class="profile-pic">
+                <h2>멘토 프로필</h2>
+                <input type="file" id="profile-pic-upload" name="profile-pic" accept="image/*" onchange="previewImage(event)" style="display:none;">
+                <div class="profile-pic-preview" onclick="document.getElementById('profile-pic-upload').click()">
+                    <!-- 이미지 미리보기가 여기 표시됨 -->
+                </div>
+                <input type="button" value="변경하기" onclick="changeProfilePic()" class="change-button">
+            </div>
+        </div>
+
+
+        <div class="profile-content">
+            <form id="profile-form">
+                <div class="form-group">
+                    <label for="mentor-nickname">닉네임</label>
+                    <input type="text" id="mentor-nickname" name="mentor-nickname" placeholder="필수">
+                </div>
+                <div class="form-group">
+                    <label for="mentor-degree">학적</label>
+                    <select id="mentor-degree" name="mentor-degree">
+                        <option value="1학년 1학기">1학년 1학기</option>
+                        <option value="1학년 2학기">1학년 2학기</option>
+                        <option value="2학년 1학기">2학년 1학기</option>
+                        <option value="2학년 2학기">2학년 2학기</option>
+                        <option value="3학년 1학기">3학년 1학기</option>
+                        <option value="3학년 2학기">3학년 2학기</option>
+                        <option value="4학년 1학기">4학년 1학기</option>
+                        <option value="4학년 2학기">4학년 2학기</option>
+                        <option value="졸업">졸업</option>
+                        <option value="휴학">휴학</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="major">전공</label>
+                    <select id="major" name="major">
+                        <option value="디지털소프트웨어공학부">디지털소프트웨어공학</option>
+                        <option value="컴퓨터공학전공">컴퓨터공학</option>
+                        <option value="소프트웨어전공">소프트웨어</option>
+                        <option value="사이버보안전공">사이버보안</option>
+                        <option value="IT미디어공학전공">IT미디어공학</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="mentor-gpa-major">학점(전공)</label>
+                    <input type="text" id="mentor-gpa-major" name="mentor-gpa-major" placeholder="선택 /4.5">
+                </div>
+                <div class="form-group">
+                    <label for="mentor-gpa-total">학점(전체)</label>
+                    <input type="text" id="mentor-gpa-total" name="mentor-gpa-total" placeholder="선택 /4.5">
+                </div>
+                <div class="form-group">
+                    <label for="mentor-interests">멘토링 분야 (#)</label>
+                    <select id="mentor-interests" name="mentor-interests">
+                        <option value="#웹/앱">#웹/앱</option>
+                        <option value="#인공지능">#인공지능</option>
+                        <option value="#빅데이터">#빅데이터</option>
+                        <option value="#사물인터넷">#사물인터넷</option>
+                        <option value="#사이버보안">#사이버보안</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="mentor-spec">스펙 <br>(대학활동, 자격증...)</label>
+                    <input type="text" id="mentor-spec" name="mentor-spec" placeholder="선택">
+                </div>
+                <div class="form-group">
+                    <label for="mentor-spec-link">링크</label>
+                    <textarea id="mentor-spec-link" name="mentor-spec-link" placeholder="선택"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="mentor-self-intro">자기소개</label>
+                    <textarea id="mentor-self-intro" name="mentor-self-intro" placeholder="선택"></textarea>
+                </div>
+                <div class="form-group buttons">
+                    <input type="button" value="수정하기" onclick="updateMentorProfile()" class="btn">
+                    <input type="submit" value="저장하기" onclick="saveMentorProfile()" class="btn">
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+    <!-- 하단 -->
+    <footer>
+        <hr>
+        <a href="intro_com.html">커뮤니티 소개</a> |
+        <a href="using_guide.html">커뮤니티 이용 가이드</a> |
+        <a href="notice.html">공지사항</a> |
+        <a href="q_a.html">문의하기</a> |
+        <a href="instagram.html">인스타그램</a><br><br>
+        © 2024.덕그로잉 all right reserved.
+    </footer>
+</body>
+
+</html>

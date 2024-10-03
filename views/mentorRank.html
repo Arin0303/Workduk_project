@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ko"> <!-- **20 멘토랭킹-검색전 -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>멘토 랭킹 - 검색전</title>
+    <style>
+        @import url('default.css');
+
+        body {
+            font-family: 'NEXON Lv1 Gothic OTF', sans-serif;
+            margin: 20px;
+        }
+
+        .container {
+            width: 700px;
+            margin-top: 8%;
+            margin-left: 450px;
+            margin-bottom: 15%;
+        }
+
+        h1 {
+            font-size: 25px;
+            margin-bottom: 40px;
+        }
+
+        .search-box {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .search-box input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .search-box button {
+            padding: 10px;
+            border-radius: 5px;
+            background-color: rgb(183, 0, 80);
+            cursor: pointer;
+            color: white;
+            border: none;
+        }
+
+        .search-box button:hover {
+            background-color: rgb(150, 0, 70);
+        }
+
+        .search-tags {
+            margin-bottom: 20px;
+            font-size: 12px;
+        }
+
+        .search-tags span {
+            display: inline-block;
+            padding: 5px 10px;
+            margin-right: 10px;
+            border: 0.5px solid #ccc;
+            border-radius: 5px;
+            background-color: #ffffff;
+            cursor: pointer;
+        }
+
+        .search-tags span.active {
+            background-color: #fdb5cb;
+            color: rgb(0, 0, 0);
+            border-color: #fdb5cb;
+        }
+
+        .mentor-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 110%;
+        }
+
+        .mentor-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .mentor-item img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .mentor-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .mentor-info span {
+            margin-bottom: 5px;
+        }
+
+    </style>
+    <script>
+        function toggleTag(tagElement) {
+            tagElement.classList.toggle('active');
+        }
+    </script>
+</head>
+<body>
+
+    <header>
+        <a href="home_login.html">
+            <img src="workduk_logo2.png" width="200" height="200" alt="Duksung Logo">
+        </a>
+        <hr>
+
+
+    </header>
+
+    <!-- 상단 목차 -->
+    <nav>
+        <!-- 디소공 소개 -->
+        <span class="top_intro">디소공 소개
+            <div class="top_intro_list">
+                <div><a href="Disogong.html">소개</a></div>
+                <div><a href="Disogong_BigData.html">빅데이터</a></div>
+                <div><a href="Disogong_WebApp.html">웹&앱</a></div>
+                <div><a href="Disogong_Ai.html">인공지능</a></div>
+                <div><a href="Disogong_Iot.html">사물인터넷</a></div>
+                <div><a href="Disogong_Security.html">사이버보안</a></div>
+            </div>
+        </span>
+        <!-- 멘토/게시판 -->
+        <span class="top_mento_board">멘토/게시판
+            <div class="top_mento_board_list">
+                <div><a href="mentorRank.html">멘토 프로필</a></div>
+                <div><a href="com_board.html">소통 게시판</a></div>
+            </div>
+        </span>
+        <!-- 합격 정보 -->
+        <span class="top_success_info">합격 정보
+            <div class="top_success_info_list">
+                <div><a href="webapp_info.html">웹&앱</a></div>
+                <div><a href="database_info.html">데이터베이스</a></div>
+                <div><a href="network_security_info.html">네트워크/보안</a></div>
+                <div><a href="ai_info.html">인공지능</a></div>
+                <div><a href="game_info.html">게임</a></div>
+                <div><a href="else_info.html">공모전/대외활동/인턴</a></div>
+            </div>
+        </span>
+
+        <!-- 프로젝트 팀원/스터디원 모집 -->
+        <span><a href="top_project_team.html">프로젝트 팀원/스터디원 모집</a></span>
+        <!-- 취업 현황 -->
+        <span><a href="employment.html">취업 현황</a></span>
+    </nav>
+
+    <!-- 좌측 프로필란 -->
+    <section class="profile_space">
+        <div><canvas id="photo" width="100" height="100" style="background-color: #FFF5F8"></canvas></div>
+        <div><a href="myPost.html">내가 쓴 글</a></div>
+        <div><a href="myComment.html">댓글 단 글</a></div>
+        <div><a href="myScrap.html">내 스크랩</a></div>
+        <div><a href="myChat.html">나의 채팅</a></div>
+        <span><a href="myProfile.html">마이 프로필 | </a></span>
+        <span><a href="home_logout.html">로그아웃</a></span>
+    </section>
+
+    <!-- 좌측 전체 검색란 -->
+    <section class="search_all">
+        <div>
+            <input type="search" id="searchAll" placeholder="전체 글 검색">
+            <input type="button" id="searchAll_button" value="검색">
+            
+        </div>
+    </section>
+
+
+    <div class="container">
+        <h1>멘토 프로필</h1>
+
+        <!-- 검색 영역 -->
+        <div class="search-box">
+            <input type="text" placeholder="이름/학과로 검색">
+            <button onclick="location.href='mentorRank_afterSearch.html'">검색</button>
+            <button onclick="location.href='myProfile_Mentor.html'">멘토 등록하기</button>
+        </div>
+        
+
+        <!-- 분야 검색 태그 -->
+        <div class="search-tags">
+            <span onclick="toggleTag(this)">#웹&앱</span>
+            <span onclick="toggleTag(this)">#데이터베이스</span>
+            <span onclick="toggleTag(this)">#네트워브/보안</span>
+            <span onclick="toggleTag(this)">#인공지능</span>
+            <span onclick="toggleTag(this)">#게임</span>
+        </div>
+
+        <!-- 멘토 리스트 -->
+        <div class="mentor-list">
+            <!-- 멘토 항목 -->
+            <div class="mentor-item" onclick="location.href='LinktoMentorProfile.html'">
+                <img src="mentor1.jpg" alt="Mentor 1">
+                <div class="mentor-info">
+                    <span>멘토 닉네임1 | 전공</span>
+                    <span>#프론트엔드</span>
+                </div>
+            </div>
+
+            <div class="mentor-item" onclick="location.href='LinktoMentorProfile.html'">
+                <img src="mentor2.jpg" alt="Mentor 2">
+                <div class="mentor-info">
+                    <span>멘토 닉네임2 | 전공</span>
+                    <span>#프론트엔드</span>
+                </div>
+                
+            </div>
+
+            <!-- 추가 멘토 항목들도 동일한 방식으로 추가 가능 -->
+        </div>
+    </div>
+    
+
+    <!-- 하단 -->
+    <footer>
+        <hr>
+        <a href="intro_com.html">커뮤니티 소개</a> |
+        <a href="using_guide.html">커뮤니티 이용 가이드</a> |
+        <a href="notice.html">공지사항</a> |
+        <a href="q_a.html">문의하기</a> |
+        <a href="instagram.html">인스타그램</a><br><br>
+        © 2024.덕그로잉 all right reserved.
+    </footer>
+</body>
+</html>

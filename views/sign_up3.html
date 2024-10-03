@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en"> <!-- **6 회원가입3 (정보입력)-->
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <meta charset="UTF-8">
+    <title>로그인-정보입력</title>
+    <style>
+        @import url(default.css);
+
+        .Signup-wrapper {
+            font-family: 'NEXON Lv1 Gothic OTF';
+            width: 30%; /* 회원가입 박스 크기 증가 */
+            padding: 30px 30px; /* 회원가입 박스 패딩 증가 */
+            background-color: #fff;
+            
+            border-radius: 10px;
+            margin-top: 5%;
+            margin-bottom: 7%;
+            margin-left: 33%;
+            text-align: center;
+            position: relative;
+        }
+        
+        .Signup-wrapper > h2 {
+            font-size: 28px;
+            color: rgb(183, 0, 80);
+            margin-top: 40px;
+            margin-bottom: 40px;
+            text-align: center;
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #fff;
+            padding: 0 10px;
+        }
+        
+        #Signup-form {
+            margin-top: 80px; /* 회원가입 텍스트 아래에 공간 추가 */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        
+        #Signup-form > input[type="text"],
+        #Signup-form > input[type="password"] {
+            width: 100%;
+            height: 48px;
+            padding: 0 10px;
+            margin-bottom: 16px;
+            border-radius: 6px;
+            background-color: #f8f8f8;
+            border: 1px solid #e0e0e0;
+            color: #333;
+        }
+        
+        #Signup-form > input::placeholder {
+            color: #d2d2d2;
+        }
+        
+        /* 재학생,졸업생,교직원 체크박스 디자인 */
+        .userType {
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .userType label {
+            margin-right: 15px;
+            font-size: 15px;
+            color: #000;
+        }
+        
+        .userType input[type="radio"] {
+            margin-right: 3px;
+            accent-color: rgb(183, 0, 80); /* 체크박스 클릭 시 채워지는 색상 */
+        }
+        
+        /* 확인 버튼 */
+        #Signup-form > input[type="submit"] {
+            width: 100%;
+            height: 48px;
+            border-radius: 6px;
+            background-color: rgb(183, 0, 80);
+            border: rgb(183, 0, 80);
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        #Signup-form > input[type="submit"]:hover {
+            background-color: rgb(118, 0, 51);
+        }
+        
+    </style>
+
+    <script>
+        
+
+        function LoginAlarm() {
+            alert("로그인/회원가입 후 이용 가능한 게시판입니다");
+        }
+
+    </script>
+</head>
+
+<body>
+    <header>
+        <a href="home_logout.html">
+            <img src="workduk_logo2.png" width="200" height="200" alt="Duksung Logo">
+        </a>
+        <hr>
+
+
+    </header>
+
+    <!-- 상단 목차 -->
+    <nav>
+        <!-- 디소공 소개 -->
+        <span class="top_intro">디소공 소개
+            <div class="top_intro_list">
+                <div><a href="Disogong_logout.html" >소개</a></div>
+                <div><a href="Disogong_BigData_logout.html" >빅데이터</a></div>
+                <div><a href="Disogong_WebApp_logout.html" >웹&앱</a></div>
+                <div><a href="Disogong_Ai_logout.html" >인공지능</a></div>
+                <div><a href="Disogong_Iot_logout.html" >사물인터넷</a></div>
+                <div><a href="Disogong_Security_logout.html">사이버보안</a></div>
+            </div>
+        </span>
+        <!-- 멘토/게시판 -->
+        <span class="top_mento_board">멘토/게시판
+            <div class="top_mento_board_list">
+                <div><a onclick="LoginAlarm()">멘토 프로필</a></div>
+                <div><a onclick="LoginAlarm()">소통 게시판</a></div>
+            </div>
+        </span>
+        <!-- 합격 정보 -->
+        <span class="top_success_info">합격 정보
+            <div class="top_success_info_list">
+                <div><a onclick="LoginAlarm()">웹&앱</a></div>
+                <div><a onclick="LoginAlarm()">데이터베이스</a></div>
+                <div><a onclick="LoginAlarm()">네트워크/보안</a></div>
+                <div><a onclick="LoginAlarm()">인공지능</a></div>
+                <div><a onclick="LoginAlarm()">게임</a></div>
+                <div><a onclick="LoginAlarm()">공모전/대외활동/인턴</a></div>
+            </div>
+        </span>
+
+        <!-- 프로젝트 팀원/스터디원 모집 -->
+        <span><a onclick="LoginAlarm()">프로젝트 팀원/스터디원 모집</a></span>
+        <!-- 취업 현황 -->
+        <span><a onclick="LoginAlarm()">취업 현황</a></span>
+    </nav>
+
+
+    <!-- 로그인 폼 -->
+    <div class="Signup-wrapper">
+        <h2>회원가입</h2>
+        <form id="Signup-form" onsubmit="showAlert(event)">
+            <input type="text" name="userName" placeholder="ID">
+            <input type="password" name="userPassword" placeholder="Password">
+            <input type="password" name="userPassword2" placeholder="Password를 다시 입력하세요">
+            <input type="text" name="nickName" placeholder="사용할 닉네임을 입력하세요">
+            <div class="userType">
+                <label><input type="radio" name="userType" value="재학생/졸업생"> 재학생/졸업생</label>
+                <label><input type="radio" name="userType" value="교직원"> 교직원</label>
+            </div>
+            <input type="submit" value="다음"> 
+        </form>
+    </div>
+
+        <!-- 하단 -->
+        <footer>
+            <hr>
+            <a href="intro_com.html">커뮤니티 소개</a> |
+            <a href="using_guide.html">커뮤니티 이용 가이드</a> |
+            <a href="notice.html">공지사항</a> |
+            <a href="q_a.html">문의하기</a> |
+            <a href="instagram.html">인스타그램</a><br><br>
+            © 2024.덕그로잉 all right reserved.
+        </footer>
+        <script>
+            function showAlert(event) {
+                event.preventDefault();  // 기본 폼 제출 동작을 막음
+        
+                var form = document.getElementById("Signup-form");
+        
+                var username = form.userName.value.trim();
+                var password = form.userPassword.value.trim();
+                var confirmPassword = form.userPassword2.value.trim();
+                var nickname = form.nickName.value.trim();
+                var usertype = form.userType.value;
+        
+                // 공백만 입력된 경우를 확인하는 로직 추가
+                if (username === ''|| username.includes(' ')) {
+                    alert("아이디는 공백을 포함하여 입력할 수 없습니다.");
+                    return;
+                }
+        
+                if (password === ''|| password.includes(' ')) {
+                    alert("비밀번호는 공백을 포함하여 입력할 수 없습니다.");
+                    return;
+                }
+        
+                if (nickname === ''|| nickname.includes(' ')) {
+                    alert("닉네임은 공백을 포함하여 입력할 수 없습니다.");
+                    return;
+                }
+        
+                // 비밀번호 일치 확인
+                if (password !== confirmPassword) {
+                    alert("비밀번호가 일치하지 않습니다. 다시 입력해주세요.");
+                    return;
+                }
+        
+                // 비밀번호 일치 확인
+                if (password !== confirmPassword) {
+                    alert("비밀번호가 일치하지 않습니다. 다시 입력해주세요.");
+                    return;
+                }
+        
+                if(!usertype){
+                    alert("사용자 유형을 선택해주세요.");
+                    return;
+                }
+                axios({
+                    method: 'post',//통신 방식(http메서드)
+                    url: 'http://localhost:8080/signup',//서버에서 처리할 경로
+                    data: { //요청 body에 담길 데이터
+                        id: username, //<input>태그의 'name="username"' 속성에서 값을 가져옴
+                        pw: password,
+                        nickname: nickname,
+                        usertype: usertype
+                    }
+                //then: request에 대한 response가 도착하면 어떤 행동을 취하도록 한다.
+                }).then((response) => {//서버에서 온 응답이 성공적으로 왔을 때 .then으로 함수인자(response)로 받아 객체에 담는다. 
+                    //회원가입 후 id를 로컬스토리지에 저장
+                    sessionStorage.setItem('id', JSON.stringify(response.data));//response.data는 서버에서 보낸 data.id
+                    return response.data;
+                }).then((data) => {
+                    window.location.href = "/sign_up1";
+                }).catch((error) => {
+                    console.error(error.response.data);//에러가 발생하면 콘솔에 출력
+                    alert('회원가입에 실패했습니다. 다시 시도해 주세요.');
+                });
+            }
+        </script>
+</body>
+</html>

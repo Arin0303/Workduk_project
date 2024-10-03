@@ -1,0 +1,240 @@
+/* 우아함 */
+@font-face {
+    font-family: 'Danjo-bold-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/Danjo-bold-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 고딕 */
+@font-face {
+    font-family: 'NEXON Lv1 Gothic OTF';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 커뮤니티 이름 */
+header {
+    font-family: 'Danjo-bold-Regular';
+    text-align: center;
+    font-size: 10px;
+    /* background-color: #FFF5F8; */
+    padding-bottom: 3px;
+
+}
+
+header img {
+    position: relative;
+    margin-top: -20px;
+    margin-bottom: -20px;
+}
+
+
+header hr {
+    border: 0.2px solid rgb(207, 207, 207);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* 상단 목차 */
+nav {
+    font-family: 'NEXON Lv1 Gothic OTF';
+    display: flex;
+    justify-content: space-between; /* 첫 번째와 마지막 항목을 좌우로 배치 */
+    font-size: 18px;
+    margin-top: 6px;
+    height: 50px;
+    cursor: pointer;
+    padding: 0 180px; /* 전체 nav의 양쪽 여백을 설정 */
+}
+
+nav span {
+    margin: 0 10px; /* 목차들끼리의 간격을 좁게 설정 */
+}
+
+nav span:first-child {
+    margin-left: 0; /* 첫 번째 항목 왼쪽 여백 제거 */
+}
+
+nav span:last-child {
+    margin-right: 0; /* 마지막 항목 오른쪽 여백 제거 */
+}
+
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-weight: 300;
+}
+
+nav a:visited {
+    color: black;
+}
+
+nav a:hover {
+    color: rgb(183, 0, 80);
+}
+
+nav a:active {
+    color: black;
+}
+
+
+/* 디소공 소개 배치 */
+.top_intro {
+    position: relative;
+}
+
+/* 상단 목차 배치 */
+.top_intro_list,
+.top_mento_board_list {
+    width: 130px;
+    margin: 0 -28px;
+    margin-top: 5px;
+    padding: 10px 10px;
+    background-color: white;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 15px;
+    line-height: 2;
+    position: absolute;
+    display: none;
+    border: 2px solid whitesmoke;
+    cursor: pointer;
+
+}
+
+.top_success_info_list {
+    width: 150px;
+    margin: 0 -50px;
+    margin-top: 5px;
+    padding: 10px 10px;
+    background-color: white;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 15px;
+    line-height: 2;
+    position: absolute;
+    display: none;
+    z-index: 1;
+    border: 2px solid whitesmoke;
+    cursor: pointer;
+}
+
+.top_program_list {
+    width: 130px;
+    margin: 0 -7px;
+    margin-top: 5px;
+    padding: 10px 10px;
+    background-color: white;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 15px;
+    line-height: 2;
+    position: absolute;
+    display: none;
+    z-index: 1;
+    border: 2px solid whitesmoke;
+    cursor: pointer;
+
+}
+
+.top_intro:hover .top_intro_list,
+.top_mento_board:hover .top_mento_board_list,
+.top_success_info:hover .top_success_info_list,
+.top_program:hover .top_program_list {
+    display: block;
+    color: rgb(183, 0, 80);
+}
+
+/* 좌측 프로필란 */
+.profile_space {
+    font-family: 'NEXON Lv1 Gothic OTF';
+    width: 160px;
+    height: 270px;
+    margin-top: 150px;
+    margin-left: 130px;
+    border-radius: 10px;
+    /* border-radius: 50px; */
+    padding: 20px;
+    float: left;
+    line-height: 2;
+    /* background: #ebe5e6; */
+    background: #FFF5F8;
+    text-align: center;
+    cursor: pointer;
+}
+
+.profile_space a {
+    text-decoration: none;
+    border-radius: 50px;
+    color: black;
+    font-size: 15px;
+}
+
+.profile_space a:visited {
+    color: black;
+}
+
+.profile_space a:active {
+    color: black;
+}
+
+/* 전체 글 검색 */
+.search_all {
+    font-family: 'NEXON Lv1 Gothic OTF';
+    float: left;
+    margin-top: -360px;
+    margin-left: 130px;
+    width: 100%;
+    
+
+}
+
+#searchAll {
+    font-family: 'NEXON Lv1 Gothic OTF';
+    width: 155px;
+    height: 25px;
+    text-align: center;
+    border: 1px solid rgb(183, 0, 80);
+    border-radius: 8px;
+}
+
+#searchAll:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(183, 0, 80, 0.5);
+}
+
+#searchAll_button {
+    font-family: 'NEXON Lv1 Gothic OTF';
+    width: 40px;
+    height: 25px;
+    border: 1px solid rgb(183, 0, 80);
+    background-color: #FFF5F8;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+#searchAll_button:active {
+    background-color: rgb(183, 0, 80);
+    color: white;
+}
+
+/* footer */
+
+footer {
+    font-family: 'NEXON Lv1 Gothic OTF';
+    font-size: 14px;
+    padding: 10px 0;
+    text-align: center;
+}
+
+footer a {
+    text-decoration: none;
+    color: black;
+    margin: 0 10px;
+}
+
+footer hr {
+    margin-bottom: 10px;
+}

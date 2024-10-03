@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en"> <!-- **19 디소공 소개:인공지능 - 로그아웃 시 -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>디소공 소개:인공지능 - 로그아웃 시 </title>
+    <style>
+        @import url(default.css);
+
+        body {
+            font-family: 'NEXON Lv1 Gothic OTF';
+        }
+
+        .container {
+            width: 60%;
+            margin-left: 400px;
+            margin-top: 60px;
+            padding: 20px;
+            border-radius: 5px;
+            border-width: 1.5px;
+            border: none;
+        }
+
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: rgb(183, 0, 80); 
+        }
+
+        .section-title {
+            margin: 10px 0;
+            font-size: 20px;
+        }
+
+        .content-box1 {
+            border: 1px solid #ccc;
+            padding: 30px;
+            margin-bottom: 20px;
+            height: 270px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        p span {
+            font-size: 16px;
+        }
+
+        .content-box2 {
+            border: 1px solid #ccc;
+            padding: 30px;
+            margin-bottom: 20px;
+            height: 50px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+
+        .menu {
+            display: flex;
+            margin-bottom: 20px;
+            
+        }
+
+        .menu div {
+            width: 20%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: center;
+            cursor: pointer;
+            background-color: rgb(183, 0, 80);
+            color: white;
+            border-radius: 5px;
+            font-size:14px;
+        }
+
+        .menu div:hover {
+            background-color: rgb(150, 0, 70);
+            font-size: 16px;
+        }
+
+        .content-display {
+            border: 1px solid #ccc;
+            height: 850px;
+            padding: 50px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+
+        .new-text {
+            color: rgb(150, 0, 70);
+            font-size: 27px;
+        }
+    </style>
+
+    <script>
+
+        function LoginAlarm() {
+            alert("로그인/회원가입 후 이용 가능한 게시판입니다");
+        }
+
+    </script>
+</head>
+
+<body>
+        <header>
+            <a href="home_logout.html">
+                <img src="workduk_logo2.png" width="200" height="200" alt="Duksung Logo">
+            </a>
+            <hr>
+        </header>
+    
+        <!-- 상단 목차 -->
+        <nav>
+            <!-- 디소공 소개 -->
+            <span class="top_intro">디소공 소개
+                <div class="top_intro_list">
+                    <div><a href="Disogong_logout.html" >소개</a></div>
+                    <div><a href="Disogong_BigData_logout.html" >빅데이터</a></div>
+                    <div><a href="Disogong_WebApp_logout.html" >웹&앱</a></div>
+                    <div><a href="Disogong_Ai_logout.html" >인공지능</a></div>
+                    <div><a href="Disogong_Iot_logout.html" >사물인터넷</a></div>
+                    <div><a href="Disogong_Security_logout.html">사이버보안</a></div>
+                </div>
+            </span>
+            <!-- 멘토/게시판 -->
+            <span class="top_mento_board">멘토/게시판
+                <div class="top_mento_board_list">
+                    <div><a onclick="LoginAlarm()">멘토 프로필</a></div>
+                    <div><a onclick="LoginAlarm()">소통 게시판</a></div>
+                </div>
+            </span>
+            <!-- 합격 정보 -->
+            <span class="top_success_info">합격 정보
+                <div class="top_success_info_list">
+                    <div><a onclick="LoginAlarm()">웹&앱</a></div>
+                    <div><a onclick="LoginAlarm()">데이터베이스</a></div>
+                    <div><a onclick="LoginAlarm()">네트워크/보안</a></div>
+                    <div><a onclick="LoginAlarm()">인공지능</a></div>
+                    <div><a onclick="LoginAlarm()">게임</a></div>
+                    <div><a onclick="LoginAlarm()">공모전/대외활동/인턴</a></div>
+                </div>
+            </span>
+    
+            <!-- 프로젝트 팀원/스터디원 모집 -->
+            <span><a onclick="LoginAlarm()">프로젝트 팀원/스터디원 모집</a></span>
+            <!-- 취업 현황 -->
+            <span><a onclick="LoginAlarm()">취업 현황</a></span>
+        </nav>
+    
+
+        
+            <!-- 좌측 프로필란 -->
+    <section class="profile_space">
+        <div><canvas id="photo" width="100" height="100" style="background-color: #FFF5F8"></canvas></div>
+        <div><a href="login.html"><br>로그인</a></div>
+        <div><a href="sign_up1.html">회원가입</a></div>
+    </section>
+
+    <!-- 좌측 전체 검색란 -->
+    <section class="search_all">
+        <div>
+            <input type="search" id="searchAll" placeholder="전체 글 검색">
+            <input type="button" id="searchAll_button" value="검색">
+        </div>
+    </section>
+
+
+        <div class="container">
+            <h1><b>디소공 소개</b></h1>
+        
+            <div class="section-title">>> 교육과정 개요</div>
+            <div class="content-box1">
+                <p>
+                <span><b>전공탐색 | </b> </span> <br>
+                <br> 컴퓨터과학개론, 프로그래밍개론
+                <br><br><br>
+                <span><b>전공공통 | </b> </span><br>
+                <br> 인터넷기초, C/C++언어, 네트워크, 파이썬고급, 공학수학, 기초객체지향프로그래밍, 자료구조, 고급객체지향프로그래밍, 데이터베이스, 알고리즘, SW공학, 컴퓨터구조, 캡스톤 디자인, 인터넷개론, 소프트웨어 분석설계, 운영체제
+                <br><br><br>
+                <span><b>전공선택 | </b> </span><br>
+                <br> 5개 트랙으로 구성 : 빅데이터, 웹&앱, 인공지능, 사물인터넷, 사이버보안
+            </p>
+            </div>
+        
+            <div class="section-title">>> 트랙제 소개</div>
+            <div class="content-box2">
+                디지털소프트웨어공학부는 컴퓨터공학전공, 소프트웨어전공, 사이버보안전공이 통합되어 23학번부터 신설된 전공이다. 
+                이에 따라 트랙제가 도입되었는데, 총 5개 트랙, <b>빅데이터/웹&앱/인공지능/사물인터넷/사이버보안</b>으로 나뉜다. 
+                각 트랙은 주제별 분류일 뿐 반드시 트랙을 정해서 수강할 필요는 없다.
+            </div>
+        
+            <div class="section-title">>> 5개 전공트랙 구성</div>
+            <div class="menu">
+                <div onclick="location.href='Disogong_BigData_logout.html#Data2'">빅데이터</div>
+                <div onclick="location.href='Disogong_WebApp_logout.html#WA2'">웹&앱</div>
+                <div onclick="location.href='Disogong_Ai_logout.html#Ai2'">인공지능</div>
+                <div onclick="location.href='Disogong_Iot_logout.html#Iot2'">사물인터넷</div>
+                <div onclick="location.href='Disogong_Security_logout.html#Sec2'">사이버보안</div>
+            </div>
+        
+            <div class="content-display" id="Ai2">
+                <p>
+                    <span class="new-text"><b>| 인공지능 트랙 </b></span>
+                    <br><br><span>인공지능의 원리를 기초부터 이해하고 실무 환경에서 구현하기 위한 학습과 실습을 수행하며, 학생들이 실제 문제에 인공지능 기술을 적용할 수 있는 능력을 배양하는 트랙 </span>
+                    <br><br><br><br>
+                    <b>> 컴퓨터비전기초(2-2)</b>
+                    <br> 디지털 이미지 데이터를 다루기 위한 컴퓨터 비전에 활용되는 Python과 같은 도구를 사용한 다양한 알고리즘을 이해한다. 
+                    <br><br><br>
+                    <b>> 인공지능기초(2-2)</b>
+                    <br> 인공지능의 주요 기술 분야인 지식표현과 추론, 퍼지 논리, 기계학습, 신경망, 딥러닝의 원리를 이해하고 Python과 같은 도구를 사용한 알고리즘을 습득한다.
+                    <br><br><br>
+                    <b>> 인공신경망기초(3-1)</b>
+                    <br> 인공신경망의 기본 개념과 원리를 이해하고, 경사하강법 및 역전파 알고리즘을 통한 학습 기법을 배우며, Python과 같은 도구를 사용한 신경망 모델의 설계와 실습을 포함합니다. 이 과목은 기본 모델 구축과 다양한 응용 사례를 통해 실전 능력을 기르는 데 중점을 둔다.
+                    <br><br><br>
+                    <b>> 인공지능플랫폼실습/설계(3-2)</b>
+                    <br> 다양한 인공지능 다양한 인공지능 플랫폼과 도구들을 사용하여 AI 모델을 설계하고 구현하는 실습 중심의 과목이다. 학생들은 Python, TensorFlow, PyTorch 등의 도구를 활용해 실제 AI 프로젝트를 수행하며, 데이터 전처리, 모델 훈련, 평가 및 최적화 등의 과정을 경험하게 된다. 이를 통해 AI 솔루션을 개발하고 적용하는 실무 능력을 키우는 데 중점을 둔다.
+                    <br><br><br>
+                    <b>> 고급컴퓨터비전(3-2)</b>
+                    <br> 컴퓨터 비전의 컴퓨터 비전의 심화된 주제를 다룬다. 딥러닝을 이용한 최신 컴퓨터 비전 기법을 배우고, 이를 실제 데이터에 적용해보는 실습을 포함한다.
+                    <br><br><br>
+                    <b>> 자연어처리(4-1)</b>
+                    <br> 텍스트 데이터 텍스트 데이터의 이해와 처리를 위한 기술과 알고리즘을 다루며, 언어 모델링, 토큰화, 구문 분석, 감정 분석 등의 주제를 학습한다. Python과 같은 도구를 사용해 자연어 처리(NLP) 모델을 구현하고, 딥러닝 기법을 적용해 실제 텍스트 데이터를 분석한다. 이 과정을 통해 자연어 처리의 이론적 기초와 실무 능력을 배양한다. 
+                    <br><br><br>
+                    <b>> 고급인공신경망(4-1)</b>
+                    <br> 심층 신경망(Deep Neural Networks)과 관련된 고급 이론과 기술을 다루며, 합성곱 신경망(CNN), 순환 신경망(RNN), 강화 학습 등 심화된 주제를 학습한다. 실제 데이터를 사용한 모델 설계, 훈련, 최적화 및 평가를 포함한 실습을 통해 실전 능력을 향상시킨다. 
+                    <br><br><br>
+                    <b>> 강화학습(4-2)</b>
+                    <br> 에이전트가 에이전트가 환경과 상호작용하며 최적의 행동을 학습하는 방법을 다루며, 마르코프 결정 과정(MDP), Q-러닝, 정책 경사법 등의 핵심 개념과 알고리즘을 학습한다. Python을 사용해 강화학습 알고리즘을 구현하고 다양한 실습을 통해 이론을 실제 문제에 적용한다. 이를 통해 자율주행, 게임 AI 등 다양한 응용 분야에서 강화학습의 실무 능력을 기른다.
+                    <br>
+                </p>
+            </div>
+        </div>
+    
+        <!-- 하단 -->
+        <footer>
+            <hr>
+            <a href="intro_com.html">커뮤니티 소개</a> |
+            <a href="using_guide.html">커뮤니티 이용 가이드</a> |
+            <a href="notice.html">공지사항</a> |
+            <a href="q_a.html">문의하기</a> |
+            <a href="instagram.html">인스타그램</a><br><br>
+            © 2024.덕그로잉 all right reserved.
+        </footer>
+    </body>
+    </html>

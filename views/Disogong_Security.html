@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en"> <!-- **19 디소공 소개 - 사이버보안 -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>디소공 소개-사이버보안</title>
+    <style>
+        @import url(default.css);
+
+        body {
+            font-family: 'NEXON Lv1 Gothic OTF';
+        }
+
+        .container {
+            width: 60%;
+            margin-left: 400px;
+            margin-top: 60px;
+            padding: 20px;
+            border-radius: 5px;
+            border-width: 1.5px;
+            border: none;
+        }
+
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: rgb(183, 0, 80); 
+        }
+
+        .section-title {
+            margin: 10px 0;
+            font-size: 20px;
+        }
+
+        .content-box1 {
+            border: 1px solid #ccc;
+            padding: 30px;
+            margin-bottom: 20px;
+            height: 270px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        p span {
+            font-size: 16px;
+        }
+
+        .content-box2 {
+            border: 1px solid #ccc;
+            padding: 30px;
+            margin-bottom: 20px;
+            height: 50px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+
+        .menu {
+            display: flex;
+            margin-bottom: 20px;
+            
+        }
+
+        .menu div {
+            width: 20%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: center;
+            cursor: pointer;
+            background-color: rgb(183, 0, 80);
+            color: white;
+            border-radius: 5px;
+            font-size:14px;
+        }
+
+        .menu div:hover {
+            background-color: rgb(150, 0, 70);
+            font-size: 16px;
+        }
+
+        .content-display {
+            border: 1px solid #ccc;
+            height: 730px;
+            padding: 50px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+
+        .new-text {
+            color: rgb(150, 0, 70);
+            font-size: 27px;
+        }
+    </style>
+</head>
+
+<body>
+        <header>
+            <a href="home_login.html">
+                <img src="workduk_logo2.png" width="200" height="200" alt="Duksung Logo">
+            </a>
+            <hr>
+    
+        </header>
+    
+        <!-- 상단 목차 -->
+        <nav>
+            <!-- 디소공 소개 -->
+            <span class="top_intro">디소공 소개
+                <div class="top_intro_list">
+                    <div><a href="Disogong.html">소개</a></div>
+                    <div><a href="Disogong_BigData.html">빅데이터</a></div>
+                    <div><a href="Disogong_WebApp.html">웹&앱</a></div>
+                    <div><a href="Disogong_Ai.html">인공지능</a></div>
+                    <div><a href="Disogong_Iot.html">사물인터넷</a></div>
+                    <div><a href="Disogong_Security.html">사이버보안</a></div>
+                </div>
+            </span>
+            <!-- 멘토/게시판 -->
+            <span class="top_mento_board">멘토/게시판
+                <div class="top_mento_board_list">
+                    <div><a href="mentorRank.html">멘토 프로필</a></div>
+                    <div><a href="com_board.html">소통 게시판</a></div>
+                </div>
+            </span>
+            <!-- 합격 정보 -->
+            <span class="top_success_info">합격 정보
+                <div class="top_success_info_list">
+                    <div><a href="webapp_info.html">웹&앱</a></div>
+                    <div><a href="database_info.html">데이터베이스</a></div>
+                    <div><a href="network_security_info.html">네트워크/보안</a></div>
+                    <div><a href="ai_info.html">인공지능</a></div>
+                    <div><a href="game_info.html">게임</a></div>
+                    <div><a href="else_info.html">공모전/대외활동/인턴</a></div>
+                </div>
+            </span>
+
+            <!-- 프로젝트 팀원/스터디원 모집 -->
+            <span><a href="top_project_team.html">프로젝트 팀원/스터디원 모집</a></span>
+            <!-- 취업 현황 -->
+            <span><a href="employment.html">취업 현황</a></span>
+        </nav>
+    
+        <!-- 좌측 프로필란 -->
+        <section class="profile_space">
+            <div><canvas id="photo" width="100" height="100" style="background-color: #FFF5F8"></canvas></div>
+            <div><a href="myPost.html">내가 쓴 글</a></div>
+            <div><a href="myComment.html">댓글 단 글</a></div>
+            <div><a href="myScrap.html">내 스크랩</a></div>
+            <div><a href="myChat.html">나의 채팅</a></div>
+            <span><a href="myProfile.html">마이 프로필 | </a></span>
+            <span><a href="home_logout.html">로그아웃</a></span>
+        </section>
+    
+        <!-- 좌측 전체 검색란 -->
+        <section class="search_all">
+            <div>
+                <input type="search" id="searchAll" placeholder="전체 글 검색">
+                <input type="button" id="searchAll_button" value="검색">
+                
+            </div>
+        </section>
+
+        <div class="container">
+            <h1><b>디소공 소개</b></h1>
+        
+            <div class="section-title">>> 교육과정 개요</div>
+            <div class="content-box1">
+                <p>
+                <span><b>전공탐색 | </b> </span> <br>
+                <br> 컴퓨터과학개론, 프로그래밍개론
+                <br><br><br>
+                <span><b>전공공통 | </b> </span><br>
+                <br> 인터넷기초, C/C++언어, 네트워크, 파이썬고급, 공학수학, 기초객체지향프로그래밍, 자료구조, 고급객체지향프로그래밍, 데이터베이스, 알고리즘, SW공학, 컴퓨터구조, 캡스톤 디자인, 인터넷개론, 소프트웨어 분석설계, 운영체제
+                <br><br><br>
+                <span><b>전공선택 | </b> </span><br>
+                <br> 5개 트랙으로 구성 : 빅데이터, 웹&앱, 인공지능, 사물인터넷, 사이버보안
+            </p>
+            </div>
+        
+            <div class="section-title">>> 트랙제 소개</div>
+            <div class="content-box2">
+                디지털소프트웨어공학부는 컴퓨터공학전공, 소프트웨어전공, 사이버보안전공이 통합되어 23학번부터 신설된 전공이다. 
+                이에 따라 트랙제가 도입되었는데, 총 5개 트랙, <b>빅데이터/웹&앱/인공지능/사물인터넷/사이버보안</b>으로 나뉜다. 
+                각 트랙은 주제별 분류일 뿐 반드시 트랙을 정해서 수강할 필요는 없다.
+            </div>
+        
+            <div class="section-title">>> 5개 전공트랙 구성</div>
+            <div class="menu">
+                <div onclick="location.href='Disogong_BigData.html#Data'">빅데이터</div>
+                <div onclick="location.href='Disogong_WebApp.html#WA'">웹&앱</div>
+                <div onclick="location.href='Disogong_Ai.html#Ai'">인공지능</div>
+                <div onclick="location.href='Disogong_Iot.html#Iot'">사물인터넷</div>
+                <div onclick="location.href='Disogong_Security.html#Sec'">사이버보안</div>
+            </div>
+        
+            <div class="content-display" id="Sec">
+                <p>
+                    <span class="new-text"><b>| 사이버 보안 트랙 </b></span>
+                    <br><br><span>정보 및 시스템에 대한 안전한 운영, 다양한 해킹 공격 및 취약점 분석 기술의 이해를 통한 침해 대응과 예방 등 정보보호 기술 전반에 필요한 다양한 전문지식을 학습하는 트랙</span>
+                    <br><br><br><br>
+                    <b>> 암호학(2-2)</b>
+                    <br>사이버보안전공의 2학년 2학기 과목인 응용암호학의 대체 과목이다. 심화된 암호화 기술을 사용하며, 이를 활용하여 인터넷 보안 프로트콜에 대해 학습한다.
+                    <br><br><br>
+                    <b>> 정보보호관리체계(3-1)</b>
+                    <br> 기업이 주요 정보자산을 보호하기 위해 수립ㆍ관리ㆍ운영하는 정보보안 관리체계가 인증기준에 적합한지를 심사하여 인증을 부여하는 제도 및 체계를 이해한다.
+                    <br><br><br>
+                    <b>> 정보보호컨설팅(3-2)</b>
+                    <br> 평가 및 인증제도는 민간업체 등에서 개발한 정보보호시스템을 국제표준인 ISO 15408을 이용하여 보안기능의 안전성과 신뢰성을 국가차원에서 보증하여 사용자들이 안심하고 정보보호시스템을 사용할 수 있도록 지원하는 제도이다. 이에 대한 지식, 기술, 태도, 사례 분석 등의 정보보호시스템 공통평가기준 컨설팅 능력을 함양한다.
+                    <br><br><br>
+                    <b>> 양자컴퓨팅과보안(3-2)</b>
+                    <br> 양자 컴퓨팅에 대한 기본적인 개념과 방향을 학습하고, 양자 컴퓨팅이 사이버보안에 미치는 영향에 대해서 학습한다. 또한 양자 컴퓨팅 환경에서의 프로그래밍 방법을 알려주고, 클라우드 양자 컴퓨팅 플랫폼인 IBMQ Experience를 활용한 체험관을 통해 양자 컴퓨팅에 대한 활용 능력을 높인다.
+                    <br><br><br>
+                    <b>> 암호프리미티브개발(3-2)</b>
+                    <br> 현대 암호 시스템의 기초가 되는 다양한 암호 기법과 알고리즘을 이해하고 구현하는 것을 목표로 한다.
+                    <br><br><br>
+                    <b>> 보안관제(4-1)</b>
+                    <br> 보안관제는 기업의 정보, 기술과 같은 IT자원을 해킹, 바이러스 등의 사이버 공격으로부터 보호하기 위한 일련의 활동을 의미한다. 
+                    <br><br><br>
+                    <b>> 디지털포렌식(4-2)</b>
+                    <br> 디지털포렌식은 범죄수사에서 과학적 증거수집 및 분석기법의 일종으로 각종 디지털 데이터 및 통화기록, 이메일 접속기록 등의 정보를 수집ㆍ분석하여 DNAㆍ지문ㆍ핏자국 등 범행과 관련된 증거를 확보하는 수사기법이다. 
+                    <br><br><br>
+                    <b>> 취약점분석및해킹(4-2)</b>
+                </p>
+            </div>
+        </div>
+    
+        <!-- 하단 -->
+        <footer>
+            <hr>
+            <a href="intro_com.html">커뮤니티 소개</a> |
+            <a href="using_guide.html">커뮤니티 이용 가이드</a> |
+            <a href="notice.html">공지사항</a> |
+            <a href="q_a.html">문의하기</a> |
+            <a href="instagram.html">인스타그램</a><br><br>
+            © 2024.덕그로잉 all right reserved.
+        </footer>
+    
+    </body>
+    </html>

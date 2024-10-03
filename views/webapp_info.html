@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en"> <!-- **27 합격정보 - 웹&앱-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>합격 정보 - 웹&앱</title>
+
+    <head>
+        <style>
+            @import url(default.css);
+
+            /* 웹&앱 합격 정보 제목 */
+            .boardName {
+                font-family: 'NEXON Lv1 Gothic OTF';
+                width: 400px;
+                font-weight: 400px;
+                font-size: 24px;
+                margin-top: 60px;
+                margin-left: 360px;
+                padding: 10px 0;
+            }
+
+            /* 분야 선택 */
+            .success_info_list {
+                font-family: 'NEXON Lv1 Gothic OTF';
+                width: 800px;
+                display: flex;
+                justify-content: space-around;
+                margin-top: 2%;
+                margin-bottom: 50px;
+                margin-left: 31%;
+                font-size: 19px;
+                
+            }
+
+            .success_info_list a {
+                text-decoration: none;
+                color: black;
+            }
+
+            .success_info_list:visited {
+                color: black;
+            }
+
+            .success_info_list:active {
+                color: black;
+            }
+
+            #webapp_info {
+                font-family: 'NEXON Lv1 Gothic OTF';
+                border-radius: 50px;
+                border: 2px solid rgb(183, 0, 80);
+                padding: 2px 10px;
+            }
+
+
+
+            
+            /* 웹&앱 합격 정보 글검색+#검색 */
+            #select_postType {
+                font-family: 'NEXON Lv1 Gothic OTF';
+                width: 40px;
+                height: 25px;
+                text-align: center;
+                font-size: 11px;
+                margin-left: 60px;
+                text-align: center;
+                background-color: #ffffff;
+                width: 60px;
+                padding: 5px;
+                border: 0.5px solid #ccc;
+                border-radius: 5px;
+                justify-content: space-around;
+            }
+
+
+    
+
+            .boardSearch {
+                font-family: 'NEXON Lv1 Gothic OTF';
+                margin-top: 10px;
+                margin-left: 30%;
+            }
+
+            #search1 {
+                font-family: 'NEXON Lv1 Gothic OTF';
+                width: 600px;
+                height: 28px;
+                margin-left: 5px;
+                margin-right: 5px;
+                padding: 10px;
+                border: 0.5px solid #ccc;
+                border-radius: 5px;
+            }
+
+            #search_button {
+                font-family: 'NEXON Lv1 Gothic OTF';
+                width: 40px;
+                height: 30px;
+                color: #ffffff;
+                background-color: rgb(183, 0, 80);
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+            }
+
+
+            .search-tags {
+            margin-top: 20px;
+            font-size: 14px;
+            margin-left: 10%;
+            
+        }
+
+        .search-tags span {
+            display: inline-block;
+            padding: 5px 10px;
+            margin-right: 10px;
+            border: 0.5px solid #ccc;
+            border-radius: 5px;
+            background-color: #ffffff;
+            cursor: pointer;
+        }
+
+        .search-tags span.active {
+            background-color: #fdb5cb;
+            color: rgb(0, 0, 0);
+            border-color: #fdb5cb;
+        }
+
+            /* 글 모음 */
+
+            table {
+                font-family: 'NEXON Lv1 Gothic OTF';
+                margin-top: 3%;
+                margin-left: 350px;
+                padding: 10px;
+                border-radius: 10px;
+                width: 70%;
+                border-collapse: collapse;
+                border-collapse: separate; /* border-collapse를 separate로 설정 */
+                border-spacing: 0; /* 셀 사이 간격 제거 */
+                
+            }
+
+            .header {
+                background-color: #FFF5F8;
+                text-align: center;
+            }
+
+            .table td,
+            .table th {
+                border-bottom: 1px lightgray solid;
+                height: 40px;
+                font-size: 14px;
+            }
+
+            .num {
+                width: 100px;
+            }
+
+            .title {
+                width: 700px;
+            }
+
+            .person {
+                width: 150px;
+            }
+
+            .date {
+                width: 150px;
+            }
+
+            .like {
+                width: 100px;
+            }
+
+            .body {
+                text-align: center;
+            }
+
+            .body .title {
+                text-align: left;
+            }
+
+            button {
+                font-family: 'NEXON Lv1 Gothic OTF';
+                width: 90px;
+                height: 35px;
+                font-size: 14px;
+                color: white;
+                border: none; 
+                box-shadow: none; /* 그림자 제거 */
+                border-radius: 5px;
+                margin-top: 10px; /* 테이블과 버튼 사이의 간격 조정 */
+                background-color: rgb(183, 0, 80);
+                cursor: pointer;
+                display: inline-block;
+                margin-bottom: 0;
+            }
+
+            .table tr:last-child td {
+                border-bottom: none; /* 마지막 행의 하단 테두리 제거 */
+            }
+
+            button:hover {
+                background-color: rgb(118, 0, 51);
+                cursor: pointer;
+            }
+        </style>
+
+        <script>
+            window.onload = function () {
+                let canvas = document.getElementById("photo");
+                let circle = canvas.getContext("2d");
+
+                circle.beginPath();
+                circle.strokeStyle = "black";
+                circle.arc(50, 50, 40, 0, 2 * Math.PI, false);
+                circle.stroke();
+            }
+
+            function toggleTag(tagElement) {
+            tagElement.classList.toggle('active');
+        }
+        </script>
+    </head>
+
+<body>
+    <header>
+        <a href="home_login.html">
+            <img src="workduk_logo2.png" width="200" height="200" alt="Duksung Logo">
+        </a>
+        <hr>
+
+
+
+    </header>
+
+    <!-- 상단 목차 -->
+    <nav>
+        <!-- 디소공 소개 -->
+        <span class="top_intro">디소공 소개
+            <div class="top_intro_list">
+                <div><a href="Disogong.html">소개</a></div>
+                <div><a href="Disogong_BigData.html">빅데이터</a></div>
+                <div><a href="Disogong_WebApp.html">웹&앱</a></div>
+                <div><a href="Disogong_Ai.html">인공지능</a></div>
+                <div><a href="Disogong_Iot.html">사물인터넷</a></div>
+                <div><a href="Disogong_Security.html">사이버보안</a></div>
+            </div>
+        </span>
+        <!-- 멘토/게시판 -->
+        <span class="top_mento_board">멘토/게시판
+            <div class="top_mento_board_list">
+                <div><a href="mentorRank.html">멘토 프로필</a></div>
+                <div><a href="com_board.html">소통 게시판</a></div>
+            </div>
+        </span>
+        <!-- 합격 정보 -->
+        <span class="top_success_info">합격 정보
+            <div class="top_success_info_list">
+                <div><a href="webapp_info.html">웹&앱</a></div>
+                <div><a href="database_info.html">데이터베이스</a></div>
+                <div><a href="network_security_info.html">네트워크/보안</a></div>
+                <div><a href="ai_info.html">인공지능</a></div>
+                <div><a href="game_info.html">게임</a></div>
+                <div><a href="else_info.html">공모전/대외활동/인턴</a></div>
+            </div>
+        </span>
+
+        <!-- 프로젝트 팀원/스터디원 모집 -->
+        <span><a href="top_project_team.html">프로젝트 팀원/스터디원 모집</a></span>
+        <!-- 취업 현황 -->
+        <span><a href="employment.html">취업 현황</a></span>
+    </nav>
+
+    <!-- 좌측 프로필란 -->
+    <section class="profile_space">
+        <div><canvas id="photo" width="100" height="100" style="background-color: #FFF5F8"></canvas></div>
+        <div><a href="myPost.html">내가 쓴 글</a></div>
+        <div><a href="myComment.html">댓글 단 글</a></div>
+        <div><a href="myScrap.html">내 스크랩</a></div>
+        <div><a href="myChat.html">나의 채팅</a></div>
+        <span><a href="myProfile.html">마이 프로필 | </a></span>
+        <span><a href="home_logout.html">로그아웃</a></span>
+    </section>
+
+    <!-- 좌측 전체 검색란 -->
+    <section class="search_all">
+        <div>
+            <input type="search" id="searchAll" placeholder="전체 글 검색">
+            <input type="button" id="searchAll_button" value="검색">
+        </div>
+    </section>
+
+    <!-- 웹&앱 합격 정보 -->
+    <section class="boardName">
+        <p>| 웹&앱 합격 정보</p>
+    </section>
+
+    <!-- 분야 선택 -->
+    <section class="success_info_list">
+        <span><a href="webapp_info.html" id="webapp_info">웹&앱</a></span>
+        <span><a href="database_info.html">데이터베이스</a></span>
+        <span><a href="network_security_info.html">네트워크/보안</a></span>
+        <span><a href="ai_info.html">인공지능</a></span>
+        <span><a href="game_info.html">게임</a></span>
+        <span><a href="else_info.html">공모전/대외활동/인턴</a></span>
+    </section>
+
+    <!-- 글검색+#검색 -->
+    <section class="boardSearch">
+        <div>
+            <form>
+                <select name="postType" id="select_postType">
+                    <option value="제목" selected>제목</option>
+                    <option value="본문">본문</option>
+                </select>
+                <input type="search" id="search1" placeholder="글 검색">
+                <input type="button" id="search_button" value="검색">
+            </form>
+        </div>
+        <!-- <div><input type="search" id="shopSearch" placeholder="#검색"></div> -->
+        <!-- 분야 검색 태그 -->
+        <div class="search-tags">
+            <span onclick="toggleTag(this)">#프론트엔드 개발</span>
+            <span onclick="toggleTag(this)">#백엔드 개발</span>
+            <span onclick="toggleTag(this)">#풀스택 개발</span>
+            <span onclick="toggleTag(this)">#모바일 앱 개발</span>
+            <span onclick="toggleTag(this)">#웹디자이너/UI/UX </span>
+        </div>
+    </section>
+
+    <!-- 글 모음 -->
+
+    <table class="table">
+        <tr class="header">
+            <td class="num">번호</td>
+            <td class="title">제목</td>
+            <td class="person">작성자</td>
+            <td class="date">작성일</td>
+            <td class="like">좋아요 수</td>
+        </tr>
+
+        <script>
+            var i, day = 20;
+            for (i = 10; i > 0; i--) {
+                document.write("<tr class='body'>");
+                document.write("<td>" + i + "</td>");
+                document.write("<td class='title'>제목입니다.</td>");
+                document.write("<td>작성자</td>");
+                document.write("<td>작성일</td>");
+                document.write("<td>좋아요수</td>");
+                document.write("</tr>");
+            }
+        </script>
+
+        <tr>
+            <td colspan="5" style="padding-bottom: 15px; text-align: right;">
+                <button onclick="location.href='webapp_info_writeNew.html'">새 글쓰기</button>
+            </td>
+        </tr>
+
+    </table>
+    <br>
+        
+    
+
+    </section>
+
+    <!-- 하단 -->
+    <footer>
+        <hr>
+        <a href="intro_com.html">커뮤니티 소개</a> |
+        <a href="using_guide.html">커뮤니티 이용 가이드</a> |
+        <a href="notice.html">공지사항</a> |
+        <a href="q_a.html">문의하기</a> |
+        <a href="instagram.html">인스타그램</a><br><br>
+        © 2024.덕그로잉 all right reserved.
+    </footer>
+    
+</body>
+
+</html>

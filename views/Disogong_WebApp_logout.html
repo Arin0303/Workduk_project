@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en"> <!-- **19 디소공 소개: 웹&앱 - 로그아웃 시 -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>디소공 소개:웹&앱 - 로그아웃페이지</title>
+    <style>
+        @import url(default.css);
+
+        body {
+            font-family: 'NEXON Lv1 Gothic OTF';
+        }
+
+        .container {
+            width: 60%;
+            margin-left: 400px;
+            margin-top: 60px;
+            padding: 20px;
+            border-radius: 5px;
+            border-width: 1.5px;
+            border: none;
+        }
+
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: rgb(183, 0, 80); 
+        }
+
+        .section-title {
+            margin: 10px 0;
+            font-size: 20px;
+        }
+
+        .content-box1 {
+            border: 1px solid #ccc;
+            padding: 30px;
+            margin-bottom: 20px;
+            height: 270px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        p span {
+            font-size: 16px;
+        }
+
+        .content-box2 {
+            border: 1px solid #ccc;
+            padding: 30px;
+            margin-bottom: 20px;
+            height: 50px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+
+        .menu {
+            display: flex;
+            margin-bottom: 20px;
+            
+        }
+
+        .menu div {
+            width: 20%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: center;
+            cursor: pointer;
+            background-color: rgb(183, 0, 80);
+            color: white;
+            border-radius: 5px;
+            font-size:14px;
+        }
+
+        .menu div:hover {
+            background-color: rgb(150, 0, 70);
+            font-size: 16px;
+        }
+
+        .content-display {
+            border: 1px solid #ccc;
+            height: 630px;
+            padding: 50px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+
+        .new-text {
+            color: rgb(150, 0, 70);
+            font-size: 27px;
+        }
+    </style>
+
+    <script>
+
+        function LoginAlarm() {
+            alert("로그인/회원가입 후 이용 가능한 게시판입니다");
+        }
+
+    </script>
+</head>
+
+<body>
+        <header>
+            <a href="home_logout.html">
+                <img src="workduk_logo2.png" width="200" height="200" alt="Duksung Logo">
+            </a>
+            <hr>
+
+        </header>
+    
+        <!-- 상단 목차 -->
+        <nav>
+            <!-- 디소공 소개 -->
+            <span class="top_intro">디소공 소개
+                <div class="top_intro_list">
+                    <div><a href="Disogong_logout.html" >소개</a></div>
+                    <div><a href="Disogong_BigData_logout.html" >빅데이터</a></div>
+                    <div><a href="Disogong_WebApp_logout.html" >웹&앱</a></div>
+                    <div><a href="Disogong_Ai_logout.html" >인공지능</a></div>
+                    <div><a href="Disogong_Iot_logout.html" >사물인터넷</a></div>
+                    <div><a href="Disogong_Security_logout.html">사이버보안</a></div>
+                </div>
+            </span>
+            <!-- 멘토/게시판 -->
+            <span class="top_mento_board">멘토/게시판
+                <div class="top_mento_board_list">
+                    <div><a onclick="LoginAlarm()">멘토 프로필</a></div>
+                    <div><a onclick="LoginAlarm()">소통 게시판</a></div>
+                </div>
+            </span>
+            <!-- 합격 정보 -->
+            <span class="top_success_info">합격 정보
+                <div class="top_success_info_list">
+                    <div><a onclick="LoginAlarm()">웹&앱</a></div>
+                    <div><a onclick="LoginAlarm()">데이터베이스</a></div>
+                    <div><a onclick="LoginAlarm()">네트워크/보안</a></div>
+                    <div><a onclick="LoginAlarm()">인공지능</a></div>
+                    <div><a onclick="LoginAlarm()">게임</a></div>
+                    <div><a onclick="LoginAlarm()">공모전/대외활동/인턴</a></div>
+                </div>
+            </span>
+    
+            <!-- 프로젝트 팀원/스터디원 모집 -->
+            <span><a onclick="LoginAlarm()">프로젝트 팀원/스터디원 모집</a></span>
+            <!-- 취업 현황 -->
+            <span><a onclick="LoginAlarm()">취업 현황</a></span>
+        </nav>
+    
+    
+            <!-- 좌측 프로필란 -->
+    <section class="profile_space">
+        <div><canvas id="photo" width="100" height="100" style="background-color: #FFF5F8"></canvas></div>
+        <div><a href="login.html"><br>로그인</a></div>
+        <div><a href="sign_up1.html">회원가입</a></div>
+    </section>
+
+    <!-- 좌측 전체 검색란 -->
+    <section class="search_all">
+        <div>
+            <input type="search" id="searchAll" placeholder="전체 글 검색">
+            <input type="button" id="searchAll_button" value="검색">
+        </div>
+    </section>
+
+        <div class="container">
+            <h1><b>디소공 소개</b></h1>
+        
+            <div class="section-title">>> 교육과정 개요</div>
+            <div class="content-box1">
+                <p>
+                <span><b>전공탐색 | </b> </span> <br>
+                <br> 컴퓨터과학개론, 프로그래밍개론
+                <br><br><br>
+                <span><b>전공공통 | </b> </span><br>
+                <br> 인터넷기초, C/C++언어, 네트워크, 파이썬고급, 공학수학, 기초객체지향프로그래밍, 자료구조, 고급객체지향프로그래밍, 데이터베이스, 알고리즘, SW공학, 컴퓨터구조, 캡스톤 디자인, 인터넷개론, 소프트웨어 분석설계, 운영체제
+                <br><br><br>
+                <span><b>전공선택 | </b> </span><br>
+                <br> 5개 트랙으로 구성 : 빅데이터, 웹&앱, 인공지능, 사물인터넷, 사이버보안
+            </p>
+            </div>
+        
+            <div class="section-title">>> 트랙제 소개</div>
+            <div class="content-box2">
+                디지털소프트웨어공학부는 컴퓨터공학전공, 소프트웨어전공, 사이버보안전공이 통합되어 23학번부터 신설된 전공이다. 
+                이에 따라 트랙제가 도입되었는데, 총 5개 트랙, <b>빅데이터/웹&앱/인공지능/사물인터넷/사이버보안</b>으로 나뉜다. 
+                각 트랙은 주제별 분류일 뿐 반드시 트랙을 정해서 수강할 필요는 없다.
+            </div>
+        
+            <div class="section-title">>> 5개 전공트랙 구성</div>
+            <div class="menu">
+                <div onclick="location.href='Disogong_BigData_logout.html#Data2'">빅데이터</div>
+                <div onclick="location.href='Disogong_WebApp_logout.html#WA2'">웹&앱</div>
+                <div onclick="location.href='Disogong_Ai_logout.html#Ai2'">인공지능</div>
+                <div onclick="location.href='Disogong_Iot_logout.html#Iot2'">사물인터넷</div>
+                <div onclick="location.href='Disogong_Security_logout.html#Sec2'">사이버보안</div>
+            </div>
+        
+            <div class="content-display" id="WA2">
+                <p>
+                    <span class="new-text"><b>| 웹&앱 트랙 </b></span>
+                    <br><br><span>여러 소프트웨어 기술 분야를 실제로 사용할 수 있도록 구현하는 트랙</span>
+                    <br><br><br><br>
+                    <b>> HCI(2-2)</b>
+                    <br> human-computer-interaction의 약자로, 사람들이 컴퓨터 시스템과 어떻게 상호작용하는지 연구한다.
+                    <br><br><br>
+                    <b>> 파이썬 웹프로그래밍(2-2)</b>
+                    <br> 파이썬을 이용해서 웹 애플리케이션을 개발하는 방법을 배우는 과정이다. 데이터 구조(리스트, 딕셔너리, 튜플 등)를 기반으로 웹을 설계할 수 있도록 한다.
+                    <br><br><br>
+                    <b>> 자바 웹프로그래밍(3-1)</b>
+                    <br> 객체지향언어로서 자바 언어의 문법 구조 등을 학습하고 자바 프로그램을 작성하는 능력을 함양한다. 자바 언어는 다른 언어와 달리 한 번 작성하면 모든 컴퓨터, 모든 운영체제에 상관없이 실행 가능한 장점을 갖고 있어 데스크탑, 웹, 모바일 등 다양한 환경에서 사용된다. 필수적인 컬렉션을 배우고, Swing을 이용해 GUI 프로그램을 작성하는 방법을 다룬다. 
+                    <br><br><br>
+                    <b>> 안드로이드 프로그래밍(3-1)</b>
+                    <br> 자바를 사용하여 안드로이드 프로그래밍을 배운다. “자바객체지향프로그래밍”, “JSP 서버 프로그래밍”의 과목을 수강하였다면 이 강의가 더 수월할 것이다. 웹 서버 연동과 HTML 파싱, 공공 API와 JSON/XML 파싱하는 것을 다룬다.
+                    <br><br><br>
+                    <b>> 아이폰 프로그래밍(3-2)</b>
+                    <br> 스위프트프로그래밍과 iOS프로그래밍, 모바일데이터베이스응용에 대하여 학습한다. 스위프트 언어의 문법과 코딩 방식을 먼저 배우고, 스위프트 언어를 사용한 iOS 프로그래밍 기초기술, 모바일 데이터베이스응용 앱을 구현해서 서버 프로그래밍 과목의 최종 프로젝트와 연동하도록 구현한다. 
+                    <br><br><br>
+                    <b>> 웹프로그래밍 응용</b>
+                    <br> 컴퓨터의 동작원리와 응용전반에 대해 학습을 하는 교과목으로, 컴퓨터가 어떻게 개발되었고 활용될 수 있는지에 대한 이론 학습을 통해, 컴퓨터 부팅, 프로그램 실행의 과정, 컴퓨터가 사용하는 언어는 무엇인지, 컴퓨터는 어떻게 방대한 데이터를 처리할 수 있는지, 그리고 인터넷에서 정보는 어떻게 전송되는지 등을 단계별로 학습한다. IT 기술의 비약적인 발전을 통한 IoT, 모바일컴퓨팅, 빅데이터, 인공지능 등 최신 ICT 트랜드에 대해 학습한다.
+                    
+                </p>
+            </div>
+        </div>
+    
+        <!-- 하단 -->
+        <footer>
+            <hr>
+            <a href="intro_com.html">커뮤니티 소개</a> |
+            <a href="using_guide.html">커뮤니티 이용 가이드</a> |
+            <a href="notice.html">공지사항</a> |
+            <a href="q_a.html">문의하기</a> |
+            <a href="instagram.html">인스타그램</a><br><br>
+            © 2024.덕그로잉 all right reserved.
+        </footer>
+    
+    </body>
+    </html>

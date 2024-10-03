@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en"> <!-- **19 디소공 소개 -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>디소공 소개</title>
+    <style>
+        @import url(default.css);
+
+        body {
+            font-family: 'NEXON Lv1 Gothic OTF';
+        }
+
+        .container {
+            width: 60%;
+            margin-left: 400px;
+            margin-top: 60px;
+            padding: 20px;
+            border-radius: 5px;
+            border-width: 1.5px;
+            border: none;
+        }
+
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: rgb(183, 0, 80); 
+        }
+
+        .section-title {
+            margin: 10px 0;
+            font-size: 20px;
+        }
+
+        .content-box1 {
+            border: 1px solid #ccc;
+            padding: 30px;
+            margin-bottom: 20px;
+            height: 270px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        p span {
+            font-size: 14px;
+        }
+
+        .content-box2 {
+            border: 1px solid #ccc;
+            padding: 30px;
+            margin-bottom: 20px;
+            height: 50px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+
+        .menu {
+            display: flex;
+            margin-bottom: 20px;
+            
+        }
+
+        .menu div {
+            width: 20%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: center;
+            cursor: pointer;
+            background-color: rgb(183, 0, 80);
+            color: white;
+            border-radius: 5px;
+            font-size:14px;
+        }
+
+        .menu div:hover {
+            background-color: rgb(150, 0, 70);
+            font-size: 16px;
+        }
+
+        .content-display {
+            border: 1px solid #ccc;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <a href="home_login.html">
+            <img src="workduk_logo2.png" width="200" height="200" alt="Duksung Logo">
+        </a>
+        <hr>
+
+    </header>
+
+    <!-- 상단 목차 -->
+    <nav>
+        <!-- 디소공 소개 -->
+        <span class="top_intro">디소공 소개
+            <div class="top_intro_list">
+                <div><a href="Disogong_logout.html" >소개</a></div>
+                <div><a href="Disogong_BigData_logout.html" >빅데이터</a></div>
+                <div><a href="Disogong_WebApp_logout.html" >웹&앱</a></div>
+                <div><a href="Disogong_Ai_logout.html" >인공지능</a></div>
+                <div><a href="Disogong_Iot_logout.html" >사물인터넷</a></div>
+                <div><a href="Disogong_Security_logout.html">사이버보안</a></div>
+            </div>
+        </span>
+        <!-- 멘토/게시판 -->
+        <span class="top_mento_board">멘토/게시판
+            <div class="top_mento_board_list">
+                <div><a onclick="LoginAlarm()">멘토 프로필</a></div>
+                <div><a onclick="LoginAlarm()">소통 게시판</a></div>
+            </div>
+        </span>
+        <!-- 합격 정보 -->
+        <span class="top_success_info">합격 정보
+            <div class="top_success_info_list">
+                <div><a onclick="LoginAlarm()">웹&앱</a></div>
+                <div><a onclick="LoginAlarm()">데이터베이스</a></div>
+                <div><a onclick="LoginAlarm()">네트워크/보안</a></div>
+                <div><a onclick="LoginAlarm()">인공지능</a></div>
+                <div><a onclick="LoginAlarm()">게임</a></div>
+                <div><a onclick="LoginAlarm()">공모전/대외활동/인턴</a></div>
+            </div>
+        </span>
+
+        <!-- 프로젝트 팀원/스터디원 모집 -->
+        <span><a onclick="LoginAlarm()">프로젝트 팀원/스터디원 모집</a></span>
+        <!-- 취업 현황 -->
+        <span><a onclick="LoginAlarm()">취업 현황</a></span>
+    </nav>
+
+    <!-- 좌측 프로필란 -->
+    <section class="profile_space">
+        <div><canvas id="photo" width="100" height="100" style="background-color: #FFF5F8"></canvas></div>
+        <div><a href="myPost.html">내가 쓴 글</a></div>
+        <div><a href="myComment.html">댓글 단 글</a></div>
+        <div><a href="myScrap.html">내 스크랩</a></div>
+        <div><a href="myChat.html">나의 채팅</a></div>
+        <span><a href="myProfile.html">마이 프로필 | </a></span>
+        <span><a href="home_logout.html">로그아웃</a></span>
+    </section>
+
+    <!-- 좌측 전체 검색란 -->
+    <section class="search_all">
+        <div>
+            <input type="search" id="searchAll" placeholder="전체 글 검색">
+            <input type="button" id="searchAll_button" value="검색">
+            
+        </div>
+    </section>
+
+    <div class="container">
+        <h1><b>디소공 소개</b></h1>
+    
+        <div class="section-title">>> 교육과정 개요</div>
+        <div class="content-box1">
+            <p>
+            <span><b>전공탐색 | </b> </span> <br>
+            <br> 컴퓨터과학개론, 프로그래밍개론
+            <br><br><br>
+            <span><b>전공공통 | </b> </span><br>
+            <br> 인터넷기초, C/C++언어, 네트워크, 파이썬고급, 공학수학, 기초객체지향프로그래밍, 자료구조, 고급객체지향프로그래밍, 데이터베이스, 알고리즘, SW공학, 컴퓨터구조, 캡스톤 디자인, 인터넷개론, 소프트웨어 분석설계, 운영체제
+            <br><br><br>
+            <span><b>전공선택 | </b> </span><br>
+            <br> 5개 트랙으로 구성 : 빅데이터, 웹&앱, 인공지능, 사물인터넷, 사이버보안
+        </p>
+        </div>
+    
+        <div class="section-title">>> 트랙제 소개</div>
+        <div class="content-box2">
+            디지털소프트웨어공학부는 컴퓨터공학전공, 소프트웨어전공, 사이버보안전공이 통합되어 23학번부터 신설된 전공이다. 
+            이에 따라 트랙제가 도입되었는데, 총 5개 트랙, <b>빅데이터/웹&앱/인공지능/사물인터넷/사이버보안</b>으로 나뉜다. 
+            각 트랙은 주제별 분류일 뿐 반드시 트랙을 정해서 수강할 필요는 없다.
+        </div>
+    
+        <div class="section-title">>> 5개 전공트랙 구성</div>
+        <div class="menu">
+            <div onclick="location.href='Disogong_BigData.html#Data2'">빅데이터</div>
+            <div onclick="location.href='Disogong_WebApp.html#WA2'">웹&앱</div>
+            <div onclick="location.href='Disogong_Ai.html#Ai2'">인공지능</div>
+            <div onclick="location.href='Disogong_Iot.html#Iot2'">사물인터넷</div>
+            <div onclick="location.href='Disogong_Security.html#Sec2'">사이버보안</div>
+        </div>
+    
+        <div class="content-display">
+            <p></p>
+        </div>
+    </div>
+
+    <!-- 하단 -->
+    <footer>
+        <hr>
+        <a href="intro_com.html">커뮤니티 소개</a> |
+        <a href="using_guide.html">커뮤니티 이용 가이드</a> |
+        <a href="notice.html">공지사항</a> |
+        <a href="q_a.html">문의하기</a> |
+        <a href="instagram.html">인스타그램</a><br><br>
+        © 2024.덕그로잉 all right reserved.
+    </footer>
+
+</body>
+</html>
+    

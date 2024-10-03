@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko"> <!-- **23 나의 채팅-검색전 -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>채팅하기</title>
+    <style>
+        @import url('default.css');
+
+        body {
+            font-family: 'NEXON Lv1 Gothic OTF';
+            margin: 20px;
+        }
+
+        .chat-container {
+            width: 60%;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+            margin-left: 400px;
+            margin-top: 8%;
+            margin-bottom: 10%;
+        }
+
+        .chat-header {
+            font-size: 15px;
+            
+        }
+
+        .chat-box {
+            height: 400px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 10px;
+            overflow-y: auto;
+            margin-bottom: 20px;
+        }
+
+        .chat-message {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+
+        .chat-message .profile-pic {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #e0e0e0;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .chat-message .message-content {
+            background-color: #fff3f7;
+            padding: 10px;
+            border-radius: 10px;
+            max-width: 80%;
+        }
+
+        .chat-input {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .chat-input input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+        .chat-input button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgb(183, 0, 80);
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .chat-input button:hover {
+            background-color: rgb(150, 0, 70);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="workduk_logo2.png" width="200" height="200" alt="Duksung Logo">
+        <hr>
+
+    </header>
+
+    <!-- 상단 목차 -->
+    <nav>
+        <!-- 디소공 소개 -->
+        <span class="top_intro">디소공 소개
+            <div class="top_intro_list">
+                <div><a href="Disogong.html">소개</a></div>
+                <div><a href="Disogong_BigData.html">빅데이터</a></div>
+                <div><a href="Disogong_WebApp.html">웹&앱</a></div>
+                <div><a href="Disogong_Ai.html">인공지능</a></div>
+                <div><a href="Disogong_Iot.html">사물인터넷</a></div>
+                <div><a href="Disogong_Security.html">사이버보안</a></div>
+            </div>
+        </span>
+        <!-- 멘토/게시판 -->
+        <span class="top_mento_board">멘토/게시판
+            <div class="top_mento_board_list">
+                <div><a href="mentorRank.html">멘토 프로필</a></div>
+                <div><a href="com_board.html">소통 게시판</a></div>
+            </div>
+        </span>
+        <!-- 합격 정보 -->
+        <span class="top_success_info">합격 정보
+            <div class="top_success_info_list">
+                <div><a href="webapp_info.html">웹&앱</a></div>
+                <div><a href="database_info.html">데이터베이스</a></div>
+                <div><a href="network_security_info.html">네트워크/보안</a></div>
+                <div><a href="ai_info.html">인공지능</a></div>
+                <div><a href="game_info.html">게임</a></div>
+                <div><a href="else_info.html">공모전/대외활동/인턴</a></div>
+            </div>
+        </span>
+        
+        <!-- 프로젝트 팀원/스터디원 모집 -->
+        <span><a href="top_project_team.html">프로젝트 팀원/스터디원 모집</a></span>
+        <!-- 취업 현황 -->
+        <span><a href="employment.html">취업 현황</a></span>
+    </nav>
+
+    <!-- 좌측 프로필란 -->
+    <section class="profile_space">
+        <div><canvas id="photo" width="100" height="100" style="background-color: #FFF5F8"></canvas></div>
+        <div><a href="myPost.html">내가 쓴 글</a></div>
+        <div><a href="myComment.html">댓글 단 글</a></div>
+        <div><a href="myScrap.html">내 스크랩</a></div>
+        <div><a href="myChat.html">나의 채팅</a></div>
+        <span><a href="myProfile.html">마이 프로필 | </a></span>
+        <span><a href="home_logout.html">로그아웃</a></span>
+    </section>
+
+    <!-- 좌측 전체 검색란 -->
+    <section class="search_all">
+        <div>
+            <input type="search" id="searchAll" placeholder="전체 글 검색">
+            <input type="button" id="searchAll_button" value="검색">
+            
+        </div>
+    </section>
+
+    <div class="chat-container">
+        <div class="chat-header">
+            <p>채팅이 시작되었습니다. 상호 존중하며 대화를 나누어주세요!</p>
+        </div>
+
+        <div class="chat-box" id="chatBox">
+            <div class="chat-message">
+                <div class="profile-pic" onclick="location.href='mentor_profile_1.html'"></div>
+                <div class="message-content">텍스트텍스트테드스는ㅇ</div>
+            </div>
+            <div class="chat-message">
+                <div class="profile-pic" onclick="location.href='mentor_profile_2.html'"></div>
+                <div class="message-content">다들 화이팅~!</div>
+            </div>
+        </div>
+
+        <div class="chat-input">
+            <input type="text" placeholder="메시지를 입력하세요">
+            <button>전송</button>
+        </div>
+    </div>
+
+    <!-- 하단 -->
+    <footer>
+        <hr>
+        <a href="intro_com.html">커뮤니티 소개</a> |
+        <a href="using_guide.html">커뮤니티 이용 가이드</a> |
+        <a href="notice.html">공지사항</a> |
+        <a href="q_a.html">문의하기</a> |
+        <a href="instagram.html">인스타그램</a><br><br>
+        © 2024.덕그로잉 all right reserved.
+    </footer>
+
+</body>
+</html>

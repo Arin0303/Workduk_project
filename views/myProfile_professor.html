@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en"> <!-- **12 교직원프로필-->
+
+<head>
+    <meta charset="UTF-8">
+    <title>교직원프로필</title>
+    <style>
+        
+        @import url(default.css);
+
+        body {
+            font-family: 'NEXON Lv1 Gothic OTF';
+        }
+
+        .profile-page {
+            display: flex;
+            width: 60%;
+            height: 55%;
+            background-color: #fff;
+            border: 0.2px solid #e0e0e0;
+            border-radius: 8px;
+            box-shadow: 0 0px 1px rgba(0,0,0,0.1);
+            
+            margin-left: 28%;
+            margin-top: 8%;
+            margin-bottom: 10%;
+        }
+
+        .profile-sidebar {
+            width: 30%;
+            padding: 20px;
+            background-color: #fefdfd;
+            text-align: center;
+            border-right: 1px solid #e0e0e0;
+        }
+
+        .profile-pic {
+            margin-bottom: 20px;
+        }
+
+        .profile-pic-preview {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: #ddd;
+            cursor: pointer;
+            margin: 0 auto 10px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .change-button {
+            background-color: rgb(183, 0, 80);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .change-button:hover {
+            background-color: rgb(118, 0, 51);
+        }
+
+        .profile-content {
+            width: 70%;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .profile-sidebar h2 {
+            margin-top: 30px;
+            margin-bottom: 20px;
+            color: #000000;
+        }
+
+        .profile-form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 22px;
+        }
+
+        .form-group {
+            display: flex;                /* Flex 컨테이너로 설정 */
+            align-items: center;          /* 수직 가운데 정렬 */
+            flex: 1 1 45%;
+            margin-bottom: 10px;
+        }
+
+        .form-group label {
+            width: 30%;                   /* 레이블의 너비를 설정 */
+            margin-bottom: 0;             /* 레이블 아래쪽 여백 제거 */
+            color: #555;
+            text-align: left;            /* 레이블 텍스트를 오른쪽 정렬 */
+            margin-right: 15px;   /* 레이블과 입력 필드 사이의 간격 */
+            font-size: 14px;        
+        }
+
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
+            width: 80%;                   /* 입력 필드의 너비를 설정 */
+            padding: 10px;
+            border: 0.3px solid #ccc;
+            border-radius: 4px;
+            
+        }
+
+        textarea {
+            resize: vertical;
+            height: 80px;
+        }
+
+        .buttons {
+            display: flex;              /* Flex 컨테이너로 설정 */
+            justify-content: center;    /* 버튼을 가로로 가운데 정렬 */
+            align-items: center;        /* 수직 방향으로 가운데 정렬 */
+            gap: 10px;                  /* 버튼 사이의 간격 */
+            margin-top: 20px;           /* 상단 여백 */
+        }
+
+        .btn {
+            width: 20%;
+            padding: 13px;
+            background-color: rgb(183, 0, 80);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: rgb(118, 0, 51);
+        }
+
+        @media (max-width: 768px) {
+            .profile-page {
+                flex-direction: column;
+            }
+            .profile-sidebar, .profile-content {
+                width: 100%;
+            }
+            .form-group {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+
+    <script>
+        window.onload = function () {
+            let canvas = document.getElementById("photo");
+            let circle = canvas.getContext("2d");
+
+            circle.beginPath();
+            circle.strokeStyle = "black";
+            circle.arc(50, 50, 40, 0, 2 * Math.PI, false);
+            circle.stroke();
+        }
+        function previewImage(event) {
+            var reader = new FileReader();
+            reader.onload = function() {
+                var output = document.querySelector('.profile-pic-preview');
+                output.style.backgroundImage = 'url(' + reader.result + ')';
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        }
+
+        function changeProfilePic() {
+            document.getElementById('profile-pic-upload').click();
+        }
+
+        function updateProfile() {
+            alert("마이 프로필 수정이 완료되었습니다!");
+        }
+
+        function saveProfile() {
+            alert("마이 프로필을 저장했습니다!");
+        }
+
+    </script>
+</head>
+
+<body>
+    <header>
+        <a href="home_login.html">
+            <img src="workduk_logo2.png" width="200" height="200" alt="Duksung Logo">
+        </a>
+        <hr>
+
+    </header>
+
+    <!-- 상단 목차 -->
+    <nav>
+        <!-- 디소공 소개 -->
+        <span class="top_intro">디소공 소개
+            <div class="top_intro_list">
+                <div><a href="Disogong.html">소개</a></div>
+                <div><a href="Disogong_BigData.html">빅데이터</a></div>
+                <div><a href="Disogong_WebApp.html">웹&앱</a></div>
+                <div><a href="Disogong_Ai.html">인공지능</a></div>
+                <div><a href="Disogong_Iot.html">사물인터넷</a></div>
+                <div><a href="Disogong_Security.html">사이버보안</a></div>
+            </div>
+        </span>
+        <!-- 멘토/게시판 -->
+        <span class="top_mento_board">멘토/게시판
+            <div class="top_mento_board_list">
+                <div><a href="mentorRank.html">멘토 프로필</a></div>
+                <div><a href="com_board.html">소통 게시판</a></div>
+            </div>
+        </span>
+        <!-- 합격 정보 -->
+        <span class="top_success_info">합격 정보
+            <div class="top_success_info_list">
+                <div><a href="webapp_info.html">웹&앱</a></div>
+                <div><a href="database_info.html">데이터베이스</a></div>
+                <div><a href="network_security_info.html">네트워크/보안</a></div>
+                <div><a href="ai_info.html">인공지능</a></div>
+                <div><a href="game_info.html">게임</a></div>
+                <div><a href="else_info.html">공모전/대외활동/인턴</a></div>
+            </div>
+        </span>
+
+        <!-- 프로젝트 팀원/스터디원 모집 -->
+        <span><a href="top_project_team.html">프로젝트 팀원/스터디원 모집</a></span>
+        <!-- 취업 현황 -->
+        <span><a href="employment.html">취업 현황</a></span>
+    </nav>
+
+    <!-- 좌측 프로필란 -->
+    <section class="profile_space">
+        <div><canvas id="photo" width="100" height="100" style="background-color: #FFF5F8"></canvas></div>
+        <div><a href="myPost.html">내가 쓴 글</a></div>
+        <div><a href="myComment.html">댓글 단 글</a></div>
+        <div><a href="myScrap.html">내 스크랩</a></div>
+        <div><a href="myChat.html">나의 채팅</a></div>
+        <span><a href="myProfile.html">마이 프로필 | </a></span>
+        <span><a href="home_logout.html">로그아웃</a></span>
+    </section>
+
+    <!-- 좌측 전체 검색란 -->
+    <section class="search_all">
+        <div>
+            <input type="search" id="searchAll" placeholder="전체 글 검색">
+            <input type="button" id="searchAll_button" value="검색">
+        </div>
+    </section>
+
+    <div class="profile-page">
+        <div class="profile-sidebar">
+            <div class="profile-pic">
+                <h2>마이 프로필</h2>
+                <input type="file" id="profile-pic-upload" name="profile-pic" accept="image/*" onchange="previewImage(event)" style="display:none;">
+                <div class="profile-pic-preview" onclick="document.getElementById('profile-pic-upload').click()">
+                    <!-- 이미지 미리보기가 여기 표시됨 -->
+                </div>
+                <input type="button" value="변경하기" onclick="changeProfilePic()" class="change-button">
+            </div>
+        </div>
+
+
+        <div class="profile-content">
+            <form id="profile-form">
+                <div class="form-group">
+                    <label for="nickname">닉네임</label>
+                    <input type="text" id="nickname" name="nickname" placeholder="필수">
+                </div>
+                
+                <div class="form-group">
+                    <label for="major">전공</label>
+                    <select id="major" name="major">
+                        <option value="디지털소프트웨어공학부">디지털소프트웨어공학</option>
+                        <option value="컴퓨터공학전공">컴퓨터공학</option>
+                        <option value="소프트웨어전공">소프트웨어</option>
+                        <option value="사이버보안전공">사이버보안</option>
+                        <option value="IT미디어공학전공">IT미디어공학</option>
+                    </select>
+                </div>
+                
+
+                <div class="form-group">
+                    <label for="spec">분야/직무</label>
+                    <input type="text" id="spec" name="spec" placeholder="선택">
+                </div>
+
+                <div class="form-group">
+                    <label for="self-intro">자기소개</label>
+                    <textarea id="self-intro" name="self-intro" placeholder="선택"></textarea>
+                </div>
+
+                <div class="form-group buttons">
+                    <input type="button" value="수정하기" onclick="updateProfile()" class="btn">
+                    <input type="submit" value="저장하기" onclick="saveProfile()" class="btn">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 하단 -->
+    <footer>
+        <hr>
+        <a href="intro_com.html">커뮤니티 소개</a> |
+        <a href="using_guide.html">커뮤니티 이용 가이드</a> |
+        <a href="notice.html">공지사항</a> |
+        <a href="q_a.html">문의하기</a> |
+        <a href="instagram.html">인스타그램</a><br><br>
+        © 2024.덕그로잉 all right reserved.
+    </footer>
+</body>
+
+</html>

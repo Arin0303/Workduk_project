@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en"> <!-- **3 로그인 -->
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <meta charset="UTF-8">
+    <title>로그인</title>
+    <style>
+        @import url(default.css);
+        
+        /* 로그인 박스 디자인 */
+        .content-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .login-wrapper {
+            font-family: 'NEXON Lv1 Gothic OTF';
+            width: 400px;
+            padding: 60px;
+            background-color: #fff;
+            
+            border-radius: 8px;
+            margin-top: 7%;
+            margin-bottom: 7%;
+            
+        
+        }
+
+        .login-wrapper>h2 {
+            font-size: 24px;
+            color: rgb(183, 0, 80);
+            margin-bottom: 20px;
+        }
+
+        #login-form>input[type="text"],
+        #login-form>input[type="password"] {
+            width: 100%;
+            height: 48px;
+            padding: 0 10px;
+            margin-bottom: 16px;
+            border-radius: 6px;
+            background-color: #f8f8f8;
+            border: 1px solid #e0e0e0;
+            color: #333;
+        }
+
+        #login-form>input::placeholder {
+            color: #d2d2d2;
+        }
+
+        #login-form>label {
+            display: flex;
+            align-items: center;
+            color: #999999;
+            margin-bottom: 16px;
+            font-size: 12px;
+        }
+
+        #login-form>label>input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        #login-form>input[type="submit"] {
+            width: 420px;
+            height: 48px;
+            border-radius: 6px;
+            background-color: rgb(183, 0, 80);
+            border: rgb(183, 0, 80);
+            color: #fff;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+
+        #login-form>input[type="submit"]:active {
+            background-color: #FFF5F8;
+            color: rgb(183, 0, 80);
+        }
+
+
+        /* "회원이 아니신가요?" 부분 디자인 */
+        .signup-link {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #000;
+            text-align: center;
+        }
+
+        .signup-link a {
+            color: rgb(183, 0, 80);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="workduk_logo2.png" width="200" height="200" alt="Duksung Logo">
+        <hr>
+
+    </header>
+
+    <!-- 상단 목차 -->
+    <nav>
+        <!-- 디소공 소개 -->
+        <span class="top_intro">디소공 소개
+            <div class="top_intro_list">
+                <div><a href="Disogong.html">소개</a></div>
+                <div><a href="Disogong_BigData.html">빅데이터</a></div>
+                <div><a href="Disogong_WebApp.html">웹&앱</a></div>
+                <div><a href="Disogong_Ai.html">인공지능</a></div>
+                <div><a href="Disogong_Iot.html">사물인터넷</a></div>
+                <div><a href="Disogong_Security.html">사이버보안</a></div>
+            </div>
+        </span>
+        <!-- 멘토/게시판 -->
+        <span class="top_mento_board">멘토/게시판
+            <div class="top_mento_board_list">
+                <div><a href="mentorRank.html">멘토 프로필</a></div>
+                <div><a href="com_board.html">소통 게시판</a></div>
+            </div>
+        </span>
+        <!-- 합격 정보 -->
+        <span class="top_success_info">합격 정보
+            <div class="top_success_info_list">
+                <div><a href="webapp_info.html">웹&앱</a></div>
+                <div><a href="database_info.html">데이터베이스</a></div>
+                <div><a href="network_security_info.html">네트워크/보안</a></div>
+                <div><a href="ai_info.html">인공지능</a></div>
+                <div><a href="game_info.html">게임</a></div>
+                <div><a href="else_info.html">공모전/대외활동/인턴</a></div>
+            </div>
+        </span>
+
+        <!-- 프로젝트 팀원/스터디원 모집 -->
+        <span><a href="top_project_team.html">프로젝트 팀원/스터디원 모집</a></span>
+        <!-- 취업 현황 -->
+        <span><a href="employment.html">취업 현황</a></span>
+    </nav>
+
+    <!-- 로그인 폼-->
+    <div class="content-wrapper">
+    <div class="login-wrapper">
+        <h2>로그인</h2>
+        <form id="login-form" onsubmit="loginUser(event)">
+            <input type="text" name="userName" placeholder="ID" required>
+            <input type="password" name="userPassword" placeholder="Password" required>
+            <label for="remember-check">
+                <input type="checkbox" id="remember-check">아이디 저장하기
+            </label>
+            <input type="submit" value="로그인">
+        </form>
+        <div class="signup-link">
+            <p>아직 회원이 아니신가요? <a href="/signup3">회원가입</a></p>
+        </div>
+    </div>
+    </div>
+
+    <!-- 하단 -->
+    <footer>
+        <hr>
+        <a href="intro_com.html">커뮤니티 소개</a> |
+        <a href="using_guide.html">커뮤니티 이용 가이드</a> |
+        <a href="notice.html">공지사항</a> |
+        <a href="q_a.html">문의하기</a> |
+        <a href="instagram.html">인스타그램</a><br><br>
+        © 2024.덕그로잉 all right reserved.
+    </footer>
+    <script>
+        function loginUser(event) {
+            event.preventDefault();
+        
+            var form = document.getElementById("login-form");
+            axios({
+                method: 'post',
+                url: 'http://localhost:8080/login',
+                data: {
+                    id: form.userName.value,
+                    pw: form.userPassword.value
+                }
+            }).then((response) => {// response: 서버 응답의 전체 내용 (응답 상태 코드, 응답 헤더, 응답 본문(response.data)등)
+                console.log("response.data:", response.data);//response.data: response에서 실제로 필요한 데이터 (보통 JSON 형식)를 추출한 것
+                return response.data;
+            })
+            .then((data) => {//이전 .then 에서 리턴한 response.data를 의미
+                if (data.code == "false") {//로그인 실패시(data.code == false)
+                    alert("다시 시도해주세요");
+                } 
+                else if (data.code == "pending"){//status가 pending일 때
+                    alert("관리자 승인처리 중입니다.(약 2~3일 소요)")
+                }
+                else {//로그인 성공시(data.code == true)
+                    window.location.href = "/home_login";
+                    }
+                })
+            .catch((error) => {
+                console.error("Error during login:", error);
+            });
+        }
+        </script>
+</body>
+
+</html>
